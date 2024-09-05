@@ -27,21 +27,52 @@
             
             <h3>Portifólio</h3>
 
-            <div class="lista-portifolio">
+            <div class="lista-portifolio" onclick="openModal('modal1')">
                 <h2>Café Digital</h2>
                 <img src="img/cafe-digital.jpg" alt="Café Digital">
             </div>
 
-            <div class="lista-portifolio">
+            <div class="lista-portifolio" onclick="openModal('modal2')">
                 <h2>Café Digital</h2>
                 <img src="img/cafe-digital.jpg" alt="Café Digital">
             </div>
 
-            <div class="lista-portifolio">
+            <div class="lista-portifolio" onclick="openModal('modal3')">
                 <h2>Café Digital</h2>
                 <img src="img/cafe-digital.jpg" alt="Café Digital">
             </div>
         </div>
+
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>Café Digital </h2>
+                <img src="img/cafe-digital.jpg" alt="Café Digital">
+                <p>O Café Digital nasceu em 2024, unindo uma cultura de tecnologia com a cultura do sítio, onde o café é colhido.</p>
+                <p>Nossa empresa tem como objetivo entregar um café bem feito no conforto da sua casa. Nosso café passa por uma colheita cuidadosa, onde cada grão é monitorado, garantindo mais segurança e confiança no sabor. Sabemos que estamos proporcionando a você um excelente café.</p>
+                <p>Digitalmente, estamos aqui com atualizações no site todas as semanas e também compartilhando novidades do mercado. Nosso objetivo é aproximar nosso café de você, seja de forma presencial ou digital, garantindo qualidade tanto em sabor quanto no preço.</p>
+                <p>O início da parceria entre a Fênix Reborn e o Café Digital remonta ao surgimento de ambas as empresas em 2024, unidas por uma visão comum: transformar a experiência digital de realizar vendas com a de apreciar um bom café. Desde o começo, as duas empresas perceberam que compartilhavam valores fundamentais, como a busca incessante pela qualidade, inovação e o compromisso com a satisfação do cliente.</p>
+                <p>A Fênix Reborn, reconhecida por sua expertise em tecnologias avançadas, com o intuito de realizar plataformas de compras e marketing, encontrou no Café Digital um parceiro ideal para aplicar suas soluções tecnológicas junto com a produção de café, desde a colheita até o monitoramento preciso de cada grão. Essa sinergia permitiu que o Café Digital elevasse seus padrões de qualidade, garantindo um produto final que reflete cuidado e inovação em cada detalhe.</p>
+                <p>Essa colaboração, desde os primeiros passos, foi marcada por um profundo respeito e confiança mútua, o que fortaleceu ainda mais o relacionamento entre as duas empresas. Juntas, Fênix Reborn e Café Digital estão redefinindo o mercado de café, entregando não apenas um produto excepcional, mas também uma experiência única que combina o melhor da tecnologia com a tradição do campo.</p>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>Detalhes do Café Digital 2</h2>
+                <p>Conteúdo específico para o segundo modal.</p>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>Detalhes do Café Digital 3</h2>
+                <p>Conteúdo específico para o terceiro modal.</p>
+            </div>
+        </div>
+        
 
         <div class="sobre-nos">
             <h1>Conheça o time da Fenix Reborn</h1>
@@ -99,7 +130,7 @@
                     <input type="name" name="name" id="nome" placeholder="Nome Completo   ex: João Pedro da Silva" required>
                     <br><br>
     
-                    <input type="phone" name="phone" id="telefone" placeholder="Telefone   ex: 14 91234-5678" required>
+                    <input type="phone" name="phone" id="telefone" placeholder="Telefone   ex: 18 91234-5678" required>
                     <br><br>
     
                     <input type="email" name="email" id="email" placeholder="E-mail   ex: joaopedro@email.com" required>
@@ -113,6 +144,39 @@
             </div>
         </div>
 
+        <div class="cookies-msg" id="cookies-msg">
+            <div class="cookies-txt">
+                <p>Este site usa cookies para melhorar a sua experiência.</p>
+        
+                <div class="cookies-btn">
+                    <button onclick="aceito()">Aceito</button>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/5518996667483" class="whatsapp-icon" target="_blank">
+            <img src="img/whatsapp.png" alt="WhatsApp">
+         </a>
+        
+
+        <footer>
+            <div class="footer-content">
+                <div class="redes-sociais">
+                    <h4>Redes Sociais</h4>
+                    <a href="#"><p>Facebook </p></a> 
+                    <a href="#"><p>Instagram</p></a>
+                    <a href="#"><p>Drible</p></a>
+                    <a href="#"><p>Behance</p></a>
+                    <a href="#"><p>LinkedIn</p></a>
+                </div>
+
+                <div class="contatos">
+                    <h4>Contatos</h4>
+                    <p>Telefone: (18) 99666-7483</p>
+                    <p>E-mail: satoshi.cipriano.13@gmail.com</p>
+                </div>
+            </div>
+        </footer>
 
     <script src="js/script.js"></script>
     </body>
