@@ -77,8 +77,8 @@ header .logo img {
 }
 
 .lista-portifolio img {
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: auto;
     display: block;
     margin-bottom: 15px; 
     border-radius: 15px;
@@ -99,8 +99,8 @@ header .logo img {
 }
 
 .modal img{
-    width: 110px;
-    height: 110px;
+    width: 200px;
+    height: auto;
     display: block;
     margin-bottom: 15px; 
     border-radius: 15px;
@@ -336,5 +336,9 @@ footer {
 
 .contatos p {
     margin: 4px 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.copyright{
     color: rgba(255, 255, 255, 0.5);
 }
