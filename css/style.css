@@ -293,7 +293,7 @@ footer {
     margin-top: 50px;
 }
 
-.footer-content {
+.footer-content, .footer-copyright {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
@@ -339,6 +339,11 @@ footer {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.copyright {
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
     color: rgba(255, 255, 255, 0.5);
 }
