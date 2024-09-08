@@ -338,12 +338,3 @@ footer {
     margin: 4px 0;
     color: rgba(255, 255, 255, 0.5);
 }
-
-.footer-copyright {
-    display: flex;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px;
-    color: rgba(255, 255, 255, 0.5);
-}
