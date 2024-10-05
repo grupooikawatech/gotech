@@ -1,91 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="img/logo-edit.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
-        <title>Fênix Reborn</title>
-    </head>
-    <body>
-        <header>
-            <div class="cabecalho">
-                <div class="logo">
-                    <img src="img/logo1.png" alt="">
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo-edit.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <title>Fênix Reborn</title>
+</head>
+<body>
+    <header role="banner">
+        <div class="cabecalho">
+            <div class="logo">
+                <img src="img/logo1.png" alt="Logotipo da Fênix Reborn">
             </div>
-        </header>
+        </div>
+    </header>
 
+    <main role="main">
         <div class="container">
             <h1>Venha renascer com a Fênix e Torne seu negócio</h1>
             <h1>Imortal</h1>
         </div>
 
-        <div class="portifolio">
-            
-            <h3>Portifólio</h3>
+        <section class="portifolio" aria-labelledby="portifolio titulo">
+            <h3 id="portifolio-title">Portfólio</h3>
 
-            <div class="lista-portifolio" onclick="openModal('modal1')">
+            <div class="lista-portifolio" onclick="openModal('modal1')" tabindex="0" role="button" aria-pressed="false">
                 <h2>Venda Certa</h2>
-                <img src="img/venda-certa.png" alt="Venda Certa">
+                <img src="img/venda-certa.png" alt="Imagem do projeto Venda Certa">
             </div>
 
-            <div class="lista-portifolio" onclick="openModal('modal2')">
+            <div class="lista-portifolio" onclick="openModal('modal2')" tabindex="0" role="button" aria-pressed="false">
                 <h2>Guitar's Pizza</h2>
-                <img src="img/guitars-pizza.png" alt="Guitar's pizza">
+                <img src="img/guitars-pizza.png" alt="Imagem do projeto Guitar's Pizza">
             </div> 
-        </div>
+        </section>
 
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal1')">&times;</span>
-                <h2>Venda Certa</h2>
-                <img src="img/venda-certa.png" alt="Venda Certa">
-                <p>Aqui na Venda Certa, nossa missão é oferecer a você os melhores smartphones e acessórios do mercado, com preços acessíveis e atendimento de qualidade. Fundada com o objetivo de simplificar a experiência de compra de celulares, nossa loja se destaca pelo compromisso com a satisfação dos clientes.</p>
-                <p>Trabalhamos com uma seleção criteriosa das marcas mais renomadas, garantindo produtos de alta tecnologia, desempenho e durabilidade. Além disso, nossa equipe está sempre pronta para te ajudar a encontrar o modelo ideal que atenda às suas necessidades e ao seu estilo de vida.</p>
-                <p>Na Venda Certa, você encontra não só os últimos lançamentos, mas também opções econômicas, todas com garantia e suporte técnico especializado. Aqui, a confiança vem em primeiro lugar. Seja para um novo smartphone ou para acessórios indispensáveis, a Venda Certa é o lugar onde tecnologia e confiança se encontram.</p>
-                <p>Esse site se trata de um TCC que foi realizado na época em que dois dos membros estudavam no Senac de Marília e decidiram realizar um site de e-commerce de uma loja virtual para tecnologias atuais a quais não são reconhecidas.</p>
-                <br>
-                <h2>Visualizar o portfólio:</h2>
-                <a href="https://github.com/fenixreborntecnologia/vendacerta"><button>Visualizar</button></a>
-                <h2>Visualizar o site:</h2>
-                <a href="https://fenixreborntecnologia.github.io/vendacerta/"><button>Visualizar</button></a>
-            </div>
-        </div>
+      
+<div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-hidden="true">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal('modal1')" aria-label="Fechar">&times;</button>
+        <h2 id="modal1-title">Venda Certa</h2>
+        <img src="img/venda-certa.png" alt="Imagem detalhada do projeto Venda Certa">
+        <p>Aqui na Venda Certa, nossa missão é oferecer a você os melhores smartphones e acessórios do mercado, com preços acessíveis e atendimento de qualidade. Fundada com o objetivo de simplificar a experiência de compra de celulares, nossa loja se destaca pelo compromisso com a satisfação dos clientes.</p>
+        <p>Trabalhamos com uma seleção criteriosa das marcas mais renomadas, garantindo produtos de alta tecnologia, desempenho e durabilidade. Além disso, nossa equipe está sempre pronta para te ajudar a encontrar o modelo ideal que atenda às suas necessidades e ao seu estilo de vida.</p>
+        <p>Na Venda Certa, você encontra não só os últimos lançamentos, mas também opções econômicas, todas com garantia e suporte técnico especializado. Aqui, a confiança vem em primeiro lugar. Seja para um novo smartphone ou para acessórios indispensáveis, a Venda Certa é o lugar onde tecnologia e confiança se encontram.</p>
+        <p>Esse site se trata de um TCC que foi realizado na época em que dois dos membros estudavam no Senac de Marília e decidiram realizar um site de e-commerce de uma loja virtual para tecnologias atuais que não são reconhecidas.</p>
+        <br>
+        <h2>Visualizar o portfólio:</h2>
+        <a href="https://github.com/fenixreborntecnologia/vendacerta" target="_blank" aria-label="Visualizar portfólio no GitHub">
+            <button type="button">Visualizar no GitHub</button>
+        </a>
+        <h2>Visualizar o site:</h2>
+        <a href="https://fenixreborntecnologia.github.io/vendacerta/" target="_blank" aria-label="Visualizar o site do projeto Venda Certa">
+            <button type="button">Visualizar Site</button>
+        </a>
+    </div>
+</div>
 
-        <div id="modal2" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('modal2')">&times;</span>
-                <h2>Guitar's Pizza</h2>
-                <img src="img/guitars-pizza.png" alt="Guitar's Pizza">
-                <p>No decorrer do curso de Design Gráfico, foi desenvolvido um projeto acadêmico chamado "Guitar's Pizza", um aplicativo voltado para uma pizzaria temática de rock. O projeto foi realizado como parte das atividades práticas da disciplina de UI/UX, na Universidade de Marília (UNIVEM), que foca na criação de um produto enxuto, ágil e com entregas rápidas.</p>
-                <p>O conceito da Guitar's Pizza se diferencia pela sua ambientação única e envolvente. A pizzaria é inspirada no universo do rock, onde cada prato do cardápio faz referência a clássicos do rock, bandas famosas ou eventos icônicos, como pizzas com nomes de músicas, como “Bohemian Rhapsody” e “Sweet Child o' Mine”. Além disso, a pizzaria promove shows cover ao vivo de bandas de rock, oferecendo uma experiência completa para os amantes desse estilo musical.</p>
-                <p>O projeto Guitar's Pizza proporcionou uma experiência prática valiosa, unindo o desenvolvimento de software a um conceito criativo e temático. A aplicação de metodologias ágeis foi essencial para a condução do projeto dentro dos prazos acadêmicos, garantindo uma entrega de qualidade que pode ser expandida e refinada com o tempo.</p>
-                <h2>Visualizar o portfólio:</h2>
-                <a href="https://www.figma.com/proto/AZ857LMXcrgVJOZ2dAjzTM/Guitar's-pizza?node-id=93-44&starting-point-node-id=60%3A3&t=G6NZ1sRdOyEzGqic-1"><button>Visualizar</button></a>
-            </div>
-        </div>         
 
-        <div class="sobre-nos">
-            <h1>Conheça o time da Fenix Reborn</h1>
-        </div>
+       
+<div id="modal2" class="modal" role="dialog" aria-labelledby="modal2-title" aria-hidden="true">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal('modal2')" aria-label="Fechar">&times;</button>
+        <h2 id="modal2-title">Guitar's Pizza</h2>
+        <img src="img/guitars-pizza.png" alt="Imagem detalhada do projeto Guitar's Pizza">
+        <p>No decorrer do curso de Design Gráfico, foi desenvolvido um projeto acadêmico chamado "Guitar's Pizza", um aplicativo voltado para uma pizzaria temática de rock. O projeto foi realizado como parte das atividades práticas da disciplina de UI/UX, na Universidade de Marília (UNIVEM), que foca na criação de um produto enxuto, ágil e com entregas rápidas.</p>
+        <p>O conceito da Guitar's Pizza se diferencia pela sua ambientação única e envolvente. A pizzaria é inspirada no universo do rock, onde cada prato do cardápio faz referência a clássicos do rock, bandas famosas ou eventos icônicos, como pizzas com nomes de músicas, como “Bohemian Rhapsody” e “Sweet Child o' Mine”. Além disso, a pizzaria promove shows cover ao vivo de bandas de rock, oferecendo uma experiência completa para os amantes desse estilo musical.</p>
+        <p>O projeto Guitar's Pizza proporcionou uma experiência prática valiosa, unindo o desenvolvimento de software a um conceito criativo e temático. A aplicação de metodologias ágeis foi essencial para a condução do projeto dentro dos prazos acadêmicos, garantindo uma entrega de qualidade que pode ser expandida e refinada com o tempo.</p>
+        <h2>Visualizar o portfólio:</h2>
+        <a href="https://www.figma.com/proto/AZ857LMXcrgVJOZ2dAjzTM/Guitar's-pizza?node-id=93-44&starting-point-node-id=60%3A3&t=G6NZ1sRdOyEzGqic-1" target="_blank" aria-label="Visualizar o protótipo do Guitar's Pizza no Figma">
+            <button type="button">Visualizar Protótipo</button>
+        </a>
+    </div>
+</div>
+  
+        <section class="sobre-nos" aria-labelledby="sobre-nos-title">
+            <h1 id="sobre-nos-title">Conheça o time da Fenix Reborn</h1>
+        </section>
 
-        <div class="sobre-o-time">
-            <h2>Sobre nós</h2>
-        
+        <section class="sobre-o-time" aria-labelledby="sobre-o-time-title">
+            <h2 id="sobre-o-time-title">Sobre nós</h2>
+
             <div class="time-fenix-reborn">
-                <img src="img/lean-vitor.jpeg" alt="Lean Vitor">
+                <img src="img/lean-vitor.jpeg" alt="Foto de Lean Vitor">
                 <div class="descricao">
                     <h3>Lean Vitor</h3>
                     <p>Cargo: Art Director And Marketing and Co-founder of Fenix Reborn (Diretor de arte e Marketing e Co-fundador do Fenix Reborn).</p>
-                    <p>Descrição: Formação de Designer Gráfico Pela Univem Marilia, especialide em Design, Ilustração e Marketing.</p>
+                    <p>Descrição: Formação de Designer Gráfico Pela Univem Marilia, especialista em Design, Ilustração e Marketing.</p>
                 </div>
             </div>
         
             <div class="time-fenix-reborn">
-                <img src="img/nicolas-santos.jpeg" alt="Nicolas Santos">
+                <img src="img/nicolas-santos.jpeg" alt="Foto de Nicolas Santos">
                 <div class="descricao">
                     <h3>Nicolas Santos</h3>
                     <p>Cargo: Full Stack Developer and Co-founder of Fenix Reborn (Desenvolvedor Full Stack e Co-fundador do Fenix Reborn).</p>
@@ -94,65 +105,67 @@
             </div>
         
             <div class="time-fenix-reborn">
-                <img src="img/pedro-brene.jpg" alt="Pedro Brene">
+                <img src="img/pedro-brene.jpg" alt="Foto de Pedro Brene">
                 <div class="descricao">
                     <h3>Pedro Brene</h3>
                     <p>Cargo: Front-End and Mobile Developer and Co-founder of Fenix Reborn (Desenvolvedor Front-End e Mobile e Co-fundador do Fenix Reborn).</p>
-                    <p>Descrição: Formado em Web Designer e Desenvolvedor Front-end no Senac de Marília, e também nos cursos de Introdução a Programação, Lógica e prática de programação e Linguágem de programação na Fundação Bradesco, formado na Universidade de Marília (Unimar).</p>
+                    <p>Descrição: Formado em Web Designer e Desenvolvedor Front-end no Senac de Marília, e também nos cursos de Introdução a Programação, Lógica e prática de programação e Linguagem de programação na Fundação Bradesco, formado na Universidade de Marília (Unimar).</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="agenda-servico">
-            <h1>Torne o seu negócio em realidade conosco</h1>
-        </div>
-    
-        <div class="agendamento-de-servico">
+        <section class="agenda-servico" aria-labelledby="agenda-servico-title">
+            <h1 id="agenda-servico-title">Torne o seu negócio em realidade conosco</h1>
+        </section>
+
+        <section class="agendamento-de-servico" aria-labelledby="formulario-title">
             <div class="formulario-para-agendamento">
-                <h2>Formulário para agendamento</h2>
-    
+                <h2 id="formulario-title">Formulário para agendamento</h2>
                 <form id="serviceForm" action="https://formspree.io/f/xbjejqvo" method="POST">
-                    <input type="name" name="name" id="nome" placeholder="Nome Completo   ex: João Pedro da Silva" required>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" name="name" id="nome" placeholder="ex: João Pedro da Silva" required aria-required="true">
                     <br><br>
-    
-                    <input type="phone" name="phone" id="telefone" placeholder="Telefone   ex: 18 91234-5678" required>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="phone" id="telefone" placeholder="ex: 18 91234-5678" required aria-required="true">
                     <br><br>
-    
-                    <input type="email" name="email" id="email" placeholder="E-mail   ex: joaopedro@email.com" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="ex: joaopedro@email.com" required aria-required="true">
                     <br><br>
-    
-                    <textarea name="mensagem" id="solicitacao" placeholder="Descreva sua solicitação aqui..." required></textarea>
+
+                    <label for="solicitacao">Descreva sua solicitação:</label>
+                    <textarea name="mensagem" id="solicitacao" placeholder="Descreva sua solicitação aqui..." required aria-required="true"></textarea>
                     <br><br>
-    
+
                     <button type="submit">Enviar Solicitação</button>
                 </form>
             </div>
-        </div>
+        </section>
 
-        <div class="cookies-msg" id="cookies-msg">
+        <div class="cookies-msg" id="cookies-msg" role="alert" aria-live="polite">
             <div class="cookies-txt">
                 <p>Este site usa cookies para melhorar a sua experiência.</p>
-        
+                
                 <div class="cookies-btn">
-                    <button onclick="aceito()">Aceito</button>
+                    <button onclick="aceito()" aria-label="Aceitar cookies">Aceito</button>
                 </div>
             </div>
         </div>
 
-        <a href="https://wa.me/5518996667483" class="whatsapp-icon" target="_blank">
-            <img src="img/whatsapp.png" alt="WhatsApp">
-         </a>
+        <a href="https://wa.me/5518996667483" class="whatsapp-icon" target="_blank" aria-label="Fale conosco no WhatsApp">
+            <img src="img/whatsapp.png" alt="Ícone do WhatsApp">
+        </a>
         
-
-        <footer>
+        <footer role="contentinfo">
             <div class="footer-content">
                 <div class="redes-sociais">
                     <h4>Redes Sociais</h4>
-                    <a href="https://www.facebook.com/profile.php?id=61565710314301"><p>Facebook </p></a> 
-                    <a href="https://www.instagram.com/fenixreborndesignetecnologia/"><p>Instagram</p></a>
-                    <a href="https://dribbble.com/FenixReborn"><p>Dribbble</p></a>
-                    <a href="https://www.behance.net/fenixreborn"><p>Behance</p></a>
-                    <a href="https://www.linkedin.com/in/fenix-reborn-226646327/"><p>LinkedIn</p></a>
+                    <a href="https://www.facebook.com/profile.php?id=61565710314301" aria-label="Facebook"><p>Facebook</p></a> 
+                    <a href="https://www.instagram.com/fenixreborndesignetecnologia/" aria-label="Instagram"><p>Instagram</p></a>
+                    <a href="https://dribbble.com/FenixReborn" aria-label="Dribbble"><p>Dribbble</p></a>
+                    <a href="https://www.behance.net/fenixreborn" aria-label="Behance"><p>Behance</p></a>
+                    <a href="https://www.linkedin.com/in/fenix-reborn-226646327/" aria-label="LinkedIn"><p>LinkedIn</p></a>
                 </div>
 
                 <div class="contatos">
@@ -163,7 +176,8 @@
             </div>
             <p style="color: rgba(255, 255, 255, 0.5);">&copy; 2024 Fenix Reborn. Todos os direitos reservados.</p>
         </footer>
+    </main>
 
     <script src="js/script.js"></script>
-    </body>
+</body>
 </html>
