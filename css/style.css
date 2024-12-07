@@ -11,6 +11,7 @@ header {
     justify-content: center; 
     align-items: center;
     padding: 10px 20px;
+    position: relative;
 }
 
 header .logo {
@@ -23,6 +24,30 @@ header .logo img {
     width: 100px;
     height: auto;
 }
+
+.nav {
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    position: absolute;
+    right: 20px; 
+}
+
+.nav a {
+    text-decoration: none; 
+    color: #fff; 
+    padding: 8px 12px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    font-size: 18px;
+}
+
+.nav a:hover {
+    color: #5FBFF9; 
+    transform: scale(1.2);
+}
+
 
 .container h1{
     color: #fff;
@@ -111,7 +136,6 @@ header .logo img {
     background-color: #5FBFF9;
     margin: 5% auto; 
     padding: 20px;
-    border: 1px solid #888;
     width: 80%; 
     max-width: 500px; 
     border-radius: 10px;
