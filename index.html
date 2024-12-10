@@ -9,9 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <title>Fênix Reborn</title>
 </head>
 <body>
+
     <header role="banner">
         <div class="cabecalho">
             <div class="logo">
@@ -20,16 +22,49 @@
         </div>
 
         <div class="nav">
-            <a href="#">Página Inicial</a>
-            <a href="#">Store</a>
-            <a href="#">Academy</a>
+            <a href="index.html">Página Inicial</a>
+            <a href="store.html">Store</a>
+            <a href="academy.html">Academy</a>
         </div>
     </header>
 
+
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <img src="img/programacao.webp" alt="Imagem 1">
+                <div class="overlay">
+                    <h3>Transforme Seu Negócio na Web com a Força da Fênix!</h3>
+                    <p>O seu negócio merece um site que não apenas funcione, mas encante. Nós da Fênix Reborn criamos soluções web inovadoras, garantindo alta performance, segurança e uma navegação fluida para os seus usuários. Vamos ressurgir sua presença online com um projeto que vai além das expectativas!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/marketing-digital.webp" alt="Imagem 2">
+                <div class="overlay">
+                    <h3>Imortalize seu negócio com a Fênix: inovação, força e resultados!</h3>
+                    <p>Renove Sua Marca com Força e Criatividade! Na Fênix, entendemos que seu negócio merece crescer com inteligência e inovação. Oferecemos soluções completas de marketing digital, desde criação de campanhas até otimização de resultados. Venha impulsionar seu sucesso com quem entende de transformação digital!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/web-desing.webp" alt="Imagem 3">
+                <div class="overlay">
+                    <h3>Transforme Sua Presença Online com um Design de Impacto!</h3>
+                    <p> Seu site merece um design que não só seja bonito, mas que seja funcional e eficiente. Na Fênix Reborn, trabalhamos para entregar designs intuitivos e responsivos, com foco em melhorar a experiência do usuário e atingir os seus objetivos de negócio. Eleve sua presença online com um site de impacto!</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev">&#8249;</button>
+            <button id="next">&#8250;</button>
+        </div>
+    </div>
+
+
+
     <main role="main">
         <div class="container">
-            <h1>Venha renascer com a Fênix e Torne seu negócio</h1>
-            <h1>Imortal</h1>
+            <h1>Navegue pelo nosso portfólio e veja como a Fênix Reborn dá vida às ideias, criando soluções digitais que impressionam e conquistam.</h1>
         </div>
 
         <section class="portifolio" aria-labelledby="portifolio titulo">
@@ -47,50 +82,64 @@
         </section>
 
       
-<div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-hidden="true">
-    <div class="modal-content">
-        <button class="close" onclick="closeModal('modal1')" aria-label="Fechar">&times;</button>
-        <h2 id="modal1-title">Venda Certa</h2>
-        <img src="img/venda-certa.png" alt="Imagem detalhada do projeto Venda Certa">
-        <p>Aqui na Venda Certa, nossa missão é oferecer a você os melhores smartphones e acessórios do mercado, com preços acessíveis e atendimento de qualidade. Fundada com o objetivo de simplificar a experiência de compra de celulares, nossa loja se destaca pelo compromisso com a satisfação dos clientes.</p>
-        <p>Trabalhamos com uma seleção criteriosa das marcas mais renomadas, garantindo produtos de alta tecnologia, desempenho e durabilidade. Além disso, nossa equipe está sempre pronta para te ajudar a encontrar o modelo ideal que atenda às suas necessidades e ao seu estilo de vida.</p>
-        <p>Na Venda Certa, você encontra não só os últimos lançamentos, mas também opções econômicas, todas com garantia e suporte técnico especializado. Aqui, a confiança vem em primeiro lugar. Seja para um novo smartphone ou para acessórios indispensáveis, a Venda Certa é o lugar onde tecnologia e confiança se encontram.</p>
-        <p>Esse site se trata de um TCC que foi realizado na época em que dois dos membros estudavam no Senac de Marília e decidiram realizar um site de e-commerce de uma loja virtual para tecnologias atuais que não são reconhecidas.</p>
-        <br>
-        <h2>Visualizar o portfólio:</h2>
-        <a href="https://github.com/fenixreborntecnologia/vendacerta" target="_blank" aria-label="Visualizar portfólio no GitHub">
-            <button type="button">Visualizar no GitHub</button>
-        </a>
-        <h2>Visualizar o site:</h2>
-        <a href="https://fenixreborntecnologia.github.io/vendacerta/" target="_blank" aria-label="Visualizar o site do projeto Venda Certa">
-            <button type="button">Visualizar Site</button>
-        </a>
-    </div>
-</div>
+        <div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-hidden="true">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal('modal1')" aria-label="Fechar">&times;</button>
+                <h2 id="modal1-title">Venda Certa</h2>
+                <img src="img/venda-certa.png" alt="Imagem detalhada do projeto Venda Certa">
+                <p>Aqui na Venda Certa, nossa missão é oferecer a você os melhores smartphones e acessórios do mercado, com preços acessíveis e atendimento de qualidade. Fundada com o objetivo de simplificar a experiência de compra de celulares, nossa loja se destaca pelo compromisso com a satisfação dos clientes.</p>
+                <p>Trabalhamos com uma seleção criteriosa das marcas mais renomadas, garantindo produtos de alta tecnologia, desempenho e durabilidade. Além disso, nossa equipe está sempre pronta para te ajudar a encontrar o modelo ideal que atenda às suas necessidades e ao seu estilo de vida.</p>
+                <p>Na Venda Certa, você encontra não só os últimos lançamentos, mas também opções econômicas, todas com garantia e suporte técnico especializado. Aqui, a confiança vem em primeiro lugar. Seja para um novo smartphone ou para acessórios indispensáveis, a Venda Certa é o lugar onde tecnologia e confiança se encontram.</p>
+                <p>Esse site se trata de um TCC que foi realizado na época em que dois dos membros estudavam no Senac de Marília e decidiram realizar um site de e-commerce de uma loja virtual para tecnologias atuais que não são reconhecidas.</p>
+                <br>
+                <h2>Visualizar o portfólio:</h2>
+                <div class="button-container">
+                    <a href="https://github.com/fenixreborntecnologia/vendacerta" target="_blank" aria-label="Visualizar portfólio no GitHub">
+                        <button type="button" class="btn-visualizar">Visualizar no GitHub</button>
+                    </a>
+                </div>
+                <h2>Visualizar o site:</h2>
+                <div class="button-container">
+                    <a href="https://fenixreborntecnologia.github.io/vendacerta/" target="_blank" aria-label="Visualizar o site do projeto Venda Certa">
+                        <button type="button" class="btn-visualizar">Visualizar Site</button>
+                    </a>
+                </div>
+            </div>
+        </div>
 
 
        
-<div id="modal2" class="modal" role="dialog" aria-labelledby="modal2-title" aria-hidden="true">
-    <div class="modal-content">
-        <button class="close" onclick="closeModal('modal2')" aria-label="Fechar">&times;</button>
-        <h2 id="modal2-title">Guitar's Pizza</h2>
-        <img src="img/guitars-pizza.png" alt="Imagem detalhada do projeto Guitar's Pizza">
-        <p>No decorrer do curso de Design Gráfico, foi desenvolvido um projeto acadêmico chamado "Guitar's Pizza", um aplicativo voltado para uma pizzaria temática de rock. O projeto foi realizado como parte das atividades práticas da disciplina de UI/UX, na Universidade de Marília (UNIVEM), que foca na criação de um produto enxuto, ágil e com entregas rápidas.</p>
-        <p>O conceito da Guitar's Pizza se diferencia pela sua ambientação única e envolvente. A pizzaria é inspirada no universo do rock, onde cada prato do cardápio faz referência a clássicos do rock, bandas famosas ou eventos icônicos, como pizzas com nomes de músicas, como “Bohemian Rhapsody” e “Sweet Child o' Mine”. Além disso, a pizzaria promove shows cover ao vivo de bandas de rock, oferecendo uma experiência completa para os amantes desse estilo musical.</p>
-        <p>O projeto Guitar's Pizza proporcionou uma experiência prática valiosa, unindo o desenvolvimento de software a um conceito criativo e temático. A aplicação de metodologias ágeis foi essencial para a condução do projeto dentro dos prazos acadêmicos, garantindo uma entrega de qualidade que pode ser expandida e refinada com o tempo.</p>
-        <h2>Visualizar o portfólio:</h2>
-        <a href="https://www.figma.com/proto/AZ857LMXcrgVJOZ2dAjzTM/Guitar's-pizza?node-id=93-44&starting-point-node-id=60%3A3&t=G6NZ1sRdOyEzGqic-1" target="_blank" aria-label="Visualizar o protótipo do Guitar's Pizza no Figma">
-            <button type="button">Visualizar Protótipo</button>
-        </a>
-    </div>
-</div>
-  
+        <div id="modal2" class="modal" role="dialog" aria-labelledby="modal2-title" aria-hidden="true">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal('modal2')" aria-label="Fechar">&times;</button>
+                <h2 id="modal2-title">Guitar's Pizza</h2>
+                <img src="img/guitars-pizza.png" alt="Imagem detalhada do projeto Guitar's Pizza">
+                <p>No decorrer do curso de Design Gráfico, foi desenvolvido um projeto acadêmico chamado "Guitar's Pizza", um aplicativo voltado para uma pizzaria temática de rock. O projeto foi realizado como parte das atividades práticas da disciplina de UI/UX, na Universidade de Marília (UNIVEM), que foca na criação de um produto enxuto, ágil e com entregas rápidas.</p>
+                <p>O conceito da Guitar's Pizza se diferencia pela sua ambientação única e envolvente. A pizzaria é inspirada no universo do rock, onde cada prato do cardápio faz referência a clássicos do rock, bandas famosas ou eventos icônicos, como pizzas com nomes de músicas, como “Bohemian Rhapsody” e “Sweet Child o' Mine”. Além disso, a pizzaria promove shows cover ao vivo de bandas de rock, oferecendo uma experiência completa para os amantes desse estilo musical.</p>
+                <p>O projeto Guitar's Pizza proporcionou uma experiência prática valiosa, unindo o desenvolvimento de software a um conceito criativo e temático. A aplicação de metodologias ágeis foi essencial para a condução do projeto dentro dos prazos acadêmicos, garantindo uma entrega de qualidade que pode ser expandida e refinada com o tempo.</p>
+                <h2>Visualizar o portfólio:</h2>
+                <div class="button-container">
+                    <a href="https://www.figma.com/proto/AZ857LMXcrgVJOZ2dAjzTM/Guitar's-pizza?node-id=93-44&starting-point-node-id=60%3A3&t=G6NZ1sRdOyEzGqic-1" target="_blank" aria-label="Visualizar o protótipo do Guitar's Pizza no Figma">
+                        <button type="button" class="btn-visualizar">Visualizar Protótipo</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
         <section class="sobre-nos" aria-labelledby="sobre-nos-title">
-            <h1 id="sobre-nos-title">Conheça o time da Fenix Reborn</h1>
+            <h1 id="sobre-nos-title">Conheça a Fênix Reborn e o time que torna a transformação digital uma realidade para o seu negócio.</h1>
         </section>
 
         <section class="sobre-o-time" aria-labelledby="sobre-o-time-title">
             <h2 id="sobre-o-time-title">Sobre nós</h2>
+
+            <p>A Fênix Reborn nasceu em 2024, fruto da união de um time de profissionais apaixonados por marketing, web design e programação. Com anos de estudo e prática, decidimos transformar todo esse conhecimento em algo que fizesse a diferença no mercado digital. Nosso objetivo é simples: criar soluções inovadoras que não apenas atendem às necessidades dos nossos clientes, mas que também impactam positivamente os negócios, contribuindo para um mercado digital mais dinâmico e transformador.</p>
+
+            <p>Nosso compromisso é com a transformação de ideias em negócios de sucesso, utilizando tecnologia de ponta, design criativo e estratégias de marketing eficazes para proporcionar resultados concretos. Acreditamos que cada projeto é uma oportunidade única de fazer a diferença, e trabalhamos com paixão para entregar soluções que realmente conectem as marcas aos seus públicos e tragam crescimento real.</p>
+
+            <p> Na Fênix Reborn, acreditamos no poder da colaboração e da inovação para levar as empresas ao próximo nível. Estamos aqui para ajudar você a alcançar seus objetivos digitais com qualidade, criatividade e dedicação.</p>
+
+            <h2 id="sobre-o-time-title">Nosso time</h2>
 
             <div class="time-fenix-reborn">
                 <img src="img/lean-vitor.jpeg" alt="Foto de Lean Vitor">
@@ -121,7 +170,7 @@
         </section>
 
         <section class="agenda-servico" aria-labelledby="agenda-servico-title">
-            <h1 id="agenda-servico-title">Torne o seu negócio em realidade conosco</h1>
+            <h1 id="agenda-servico-title">Dê vida ao seu negócio com nossa ajuda especializada.</h1>
         </section>
 
         <section class="agendamento-de-servico" aria-labelledby="formulario-title">
@@ -144,7 +193,9 @@
                     <textarea name="mensagem" id="solicitacao" placeholder="Descreva sua solicitação aqui..." required aria-required="true"></textarea>
                     <br><br>
 
-                    <button type="submit">Enviar Solicitação</button>
+                    <div class="btn-container-submit">
+                        <button type="submit" class="btn-submit">Enviar Solicitação</button>
+                    </div>
                 </form>
             </div>
         </section>
@@ -167,11 +218,8 @@
             <div class="footer-content">
                 <div class="redes-sociais">
                     <h4>Redes Sociais</h4>
-                    <a href="https://www.facebook.com/profile.php?id=61565710314301" aria-label="Facebook"><p>Facebook</p></a> 
+                    <a href="https://www.facebook.com/profile.php?id=61569761956944" aria-label="Facebook"><p>Facebook</p></a> 
                     <a href="https://www.instagram.com/fenixreborndesignetecnologia/" aria-label="Instagram"><p>Instagram</p></a>
-                    <a href="https://dribbble.com/FenixReborn" aria-label="Dribbble"><p>Dribbble</p></a>
-                    <a href="https://www.behance.net/fenixreborn" aria-label="Behance"><p>Behance</p></a>
-                    <a href="https://www.linkedin.com/in/fenix-reborn-226646327/" aria-label="LinkedIn"><p>LinkedIn</p></a>
                 </div>
 
                 <div class="contatos">
