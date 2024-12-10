@@ -1,3 +1,24 @@
+/* Apenas Mobile! */
+
+let btnMenu = document.getElementById('btn-menu')
+let menu = document.getElementById('nav-mobile')
+let overlay = document.getElementById('overlay-menu')
+
+btnMenu.addEventListener('click', ()=>{
+    menu.classList.add('abrir-menu')
+})
+
+menu.addEventListener('click', ()=>{
+    menu.classList.remove('abrir-menu')
+})
+
+overlay.addEventListener('click', ()=>{
+    menu.classList.remove('abrir-menu')
+})
+
+
+/* Carrossel */
+
 const carousels = document.querySelectorAll('.carousel');
 
 carousels.forEach((carousel) => {
@@ -36,7 +57,6 @@ carousels.forEach((carousel) => {
 });
 
 
-
 /* Modal */
 
 function openModal(modalId) {
@@ -55,6 +75,7 @@ window.onclick = function(event) {
         }
     }
 }
+
 
 /* Cookies */ 
 
