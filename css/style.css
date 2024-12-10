@@ -612,9 +612,36 @@ footer {
 
 /* Media */
 
+
+@media (max-width: 480px) {
+
+    /* Responsividade para smartphones (telas menores que 480px) */
+
+    /* Carrossel */
+
+    .carousel-item {
+        height: 300px; 
+    }
+
+    .carousel-item .overlay {
+        max-width: 95%;
+    }
+
+    .carousel-item .overlay h3 {
+        font-size: 1.1rem; 
+    }
+
+    .carousel-item .overlay p {
+        font-size: 0.7rem; 
+    }
+}
+
+
 @media screen and (max-width: 768px) {
-    
+
     /* Esconde o menu desktop e mostra o menu mobile em telas pequenas */
+
+    /*Navegação Mobile*/
 
     .nav {
         display: none;
@@ -627,11 +654,38 @@ footer {
     .btn-abrir-menu {
         display: block;
     }
+
+    
+    /* Carrossel */
+
+    .carousel-item {
+        height: 400px; /* Ajusta a altura das imagens para telas menores */
+    }
+
+    .carousel-item .overlay {
+        max-width: 90%; /* Aumenta a largura máxima da sobreposição */
+        padding: 10px;
+    }
+
+    .carousel-item .overlay h3 {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+    }
+
+    .carousel-item .overlay p {
+        font-size: 0.9rem; /* Reduz o tamanho do texto */
+    }
+
+    .carousel-buttons button {
+        padding: 8px 15px; /* Ajusta o tamanho dos botões */
+    }
+
 }
 
 @media screen and (min-width: 769px) {
 
     /* Exibe o menu desktop e esconde o menu mobile em telas grandes */
+
+        /* Navegação */
 
     .nav {
         display: flex;
@@ -644,4 +698,5 @@ footer {
     .btn-abrir-menu {
         display: none;
     }
+
 }
