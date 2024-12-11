@@ -305,17 +305,16 @@ header .logo img {
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
+    display: none;
+    position: fixed;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    padding-top: 60px; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal img{
@@ -327,13 +326,17 @@ header .logo img {
     margin: 0 auto;
 }
 
+
 .modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    max-height: 90vh; 
     background-color: #5FBFF9;
-    margin: 5% auto; 
     padding: 20px;
-    width: 80%; 
-    max-width: 500px; 
     border-radius: 10px;
+    overflow-y: auto; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .close {
@@ -539,6 +542,7 @@ textarea {
     width: 50px;
     height: 50px;
     z-index: 1000;
+    
 }
 
 .whatsapp-icon img {
@@ -547,6 +551,7 @@ textarea {
     border-radius: 10px;
     align-items: center;
     transition: transform 0.3s;
+    border: 2px solid #fff;
 }
 
 .whatsapp-icon img:hover {
@@ -634,6 +639,100 @@ footer {
     .carousel-item .overlay p {
         font-size: 0.7rem; 
     }
+
+
+    /* Portfólio */
+
+    .container h1 {
+        font-size: 1.5em; 
+    }
+
+    .portifolio h3 {
+        font-size: 1.5em; 
+    }
+
+    .btn-visualizar {
+        font-size: 12px; 
+        padding: 8px 16px; 
+
+}
+
+    /* Sobre nós */
+
+    .sobre-o-time {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .time-fenix-reborn img {
+        width: 50%;
+    }
+
+    .descricao h3 {
+        font-size: 1.2em;
+    }
+
+    .descricao p {
+        font-size: 0.9em;
+    }
+
+
+    /* Agendamento de Serviço */
+
+    .agenda-servico {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .agendamento-de-servico {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+        padding: 6px;
+        margin-top: 10px;
+    }
+
+    .btn-submit {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+
+    /* Aceitar Cookies */
+
+    .cookies-msg {
+        width: 90%;
+        bottom: 10%;
+        padding: 10px;
+    }
+
+    .cookies-msg .cookies-txt {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .cookies-msg .cookies-btn {
+        margin: 10px 0 0 0;
+    }
+
+    .cookies-msg .cookies-btn button {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
+
+    /* Icones de WhatsApp */
+
 }
 
 
@@ -659,25 +758,124 @@ footer {
     /* Carrossel */
 
     .carousel-item {
-        height: 400px; /* Ajusta a altura das imagens para telas menores */
+        height: 400px; 
     }
 
     .carousel-item .overlay {
-        max-width: 90%; /* Aumenta a largura máxima da sobreposição */
+        max-width: 90%; 
         padding: 10px;
     }
 
     .carousel-item .overlay h3 {
-        font-size: 1.5rem; /* Reduz o tamanho do título */
+        font-size: 1.5rem; 
     }
 
     .carousel-item .overlay p {
-        font-size: 0.9rem; /* Reduz o tamanho do texto */
+        font-size: 0.9rem; 
     }
 
     .carousel-buttons button {
-        padding: 8px 15px; /* Ajusta o tamanho dos botões */
+        padding: 8px 15px; 
     }
+
+
+    /* Portfólio */
+
+    .portifolio {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .lista-portifolio {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+
+
+    .modal-content {
+        width: 80%; 
+        max-width: 400px; 
+    }
+
+    .modal img {
+        width: 150px; 
+    }
+
+
+    /* Sobre nós */
+
+    .sobre-o-time {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .time-fenix-reborn {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .time-fenix-reborn img {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    .descricao {
+        text-align: center;
+    }
+
+    /* Agendamento de Serviço */
+
+    .agenda-servico {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        padding: 0 15px;
+    }
+
+    .agendamento-de-servico {
+        width: 80%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input, textarea {
+        font-size: 16px;
+        padding: 8px;
+        margin-top: 15px;
+    }
+
+    .btn-submit {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    /* Aceitar Cookies */
+
+    .cookies-msg {
+        width: 70%;
+        bottom: 7%;
+        padding: 15px;
+    }
+
+    .cookies-msg .cookies-txt {
+        text-align: justify;
+        padding: 15px;
+    }
+
+    .cookies-msg .cookies-btn {
+        margin-left: 15px;
+    }
+
+    .cookies-msg .cookies-btn button {
+        font-size: 17px;
+        padding: 10px 30px;
+    }
+
+    /* Icones de WhatsApp */
 
 }
 
