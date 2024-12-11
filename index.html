@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/logo-edit.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
@@ -26,6 +27,30 @@
             <a href="store.html">Store</a>
             <a href="academy.html">Academy</a>
         </div>
+
+        <!-- Menu Mobile -->
+
+        <div class="btn-abrir-menu" id="btn-menu">
+            <i class="fi fi-br-menu-burger"></i>
+        </div>
+
+        <div class="nav-mobile" id="nav-mobile">
+            <div class="btn-fechar">
+                <i class="fi fi-br-cross"></i>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="academy.html">Academy</a></li>
+                </ul>
+            </nav>
+
+        </div> 
+
+        <div class="overlay-menu" id="overlay-menu"></div>
+
     </header>
 
 
@@ -79,6 +104,11 @@
                 <h2>Guitar's Pizza</h2>
                 <img src="img/guitars-pizza.png" alt="Imagem do projeto Guitar's Pizza">
             </div> 
+
+            <div class="lista-portifolio" onclick="openModal('modal3')" tabindex="0" role="button" aria-pressed="false">
+                <h2>Chega de Moleza</h2>
+                <img src="img/chega-de-moleza.png" alt="Imagem do projeto Chega de Moleza">
+            </div> 
         </section>
 
       
@@ -125,6 +155,27 @@
                 </div>
             </div>
         </div>
+
+        <div id="modal3" class="modal" role="dialog" aria-labelledby="modal3-title" aria-hidden="true">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal('modal3')" aria-label="Fechar">&times;</button>
+                <h2 id="modal3-title">Chega de Moleza</h2>
+                <img src="img/chega-de-moleza.png" alt="Imagem detalhada do projeto Chega de Moleza">
+                <p>Na Fenix Reborn Design e Tecnologia, desenvolvemos uma página de campanha para uma cliente do nicho de emagrecimento, focada na venda de um e-book sobre caldo de ossos. O projeto incluiu:</p>
+                <p>Design Atraente: Criamos um layout moderno e funcional, com elementos visuais que captam a atenção do público-alvo.</p>
+                <p>Copywriting Persuasivo: Desenvolvemos textos claros e impactantes, destacando os benefícios do caldo de ossos e incentivando a conversão.</p>
+                <p>Estratégias de Conversão: Aplicamos técnicas de UX para facilitar o processo de compra e aumentar a taxa de conversão.</p>
+                <p>Esse projeto foi um exemplo de como aliamos criatividade e tecnologia para atender às necessidades específicas de nossos clientes, impulsionando suas vendas e promovendo seus produtos de maneira eficaz.</p>
+                <h2>Visualizar o portfólio:</h2>
+                <div class="button-container">
+                    <a href="https://www.chegademoleza.com.br/ebook-caldo-de-ossos?orbt_src=orbt-vst-Nh3PAeGTnFKoT8NTR7cP" target="_blank" aria-label="Visualizar o protótipo do Guitar's Pizza no Figma">
+                        <button type="button" class="btn-visualizar">Visualizar Site</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
         
         <section class="sobre-nos" aria-labelledby="sobre-nos-title">
             <h1 id="sobre-nos-title">Conheça a Fênix Reborn e o time que torna a transformação digital uma realidade para o seu negócio.</h1>

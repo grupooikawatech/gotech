@@ -1,3 +1,24 @@
+/* Apenas Mobile! */
+
+let btnMenu = document.getElementById('btn-menu')
+let menu = document.getElementById('nav-mobile')
+let overlay = document.getElementById('overlay-menu')
+
+btnMenu.addEventListener('click', ()=>{
+    menu.classList.add('abrir-menu')
+})
+
+menu.addEventListener('click', ()=>{
+    menu.classList.remove('abrir-menu')
+})
+
+overlay.addEventListener('click', ()=>{
+    menu.classList.remove('abrir-menu')
+})
+
+
+/* Carrossel */
+
 const carousels = document.querySelectorAll('.carousel');
 
 carousels.forEach((carousel) => {
@@ -36,10 +57,9 @@ carousels.forEach((carousel) => {
 });
 
 
-
 /* Modal */
 
-function openModal(modalId) {
+/* function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
 }
 
@@ -54,7 +74,31 @@ window.onclick = function(event) {
             modals[i].style.display = "none";
         }
     }
-}
+} */
+
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = "flex"; // Define flex para alinhar centralmente
+        document.body.style.overflow = "hidden"; // Evita rolagem da página ao abrir o modal
+    }
+    
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Restaura a rolagem da página
+    }
+    
+    window.onclick = function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+                document.body.style.overflow = "auto"; // Restaura a rolagem
+            }
+        }
+    };
+    
+
 
 /* Cookies */ 
 
