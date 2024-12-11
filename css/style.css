@@ -617,6 +617,26 @@ footer {
 
 /* Media */
 
+@media screen and (min-width: 769px) {
+
+    /* Exibe o menu desktop e esconde o menu mobile em telas grandes */
+
+        /* Navegação */
+
+    .nav {
+        display: flex;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    .btn-abrir-menu {
+        display: none;
+    }
+
+}
+
 
 @media (max-width: 480px) {
 
@@ -879,22 +899,3 @@ footer {
 
 }
 
-@media screen and (min-width: 769px) {
-
-    /* Exibe o menu desktop e esconde o menu mobile em telas grandes */
-
-        /* Navegação */
-
-    .nav {
-        display: flex;
-    }
-
-    .nav-mobile {
-        display: none;
-    }
-
-    .btn-abrir-menu {
-        display: none;
-    }
-
-}
