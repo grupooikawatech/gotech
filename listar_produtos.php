@@ -1,4 +1,7 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+
 // Conexão com o banco de dados
 
 $host = "193.203.175.154:3306";
