@@ -10,6 +10,7 @@ body {
 
 
 /* Sessão de aviso */
+
 main {
     flex: 1;
     padding: 20px;
@@ -84,30 +85,6 @@ header .logo img {
     transform: scale(1.2);
 }
 
-/* Ícones de WhatsApp */
-
-.whatsapp-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    z-index: 1000;
-}
-
-.whatsapp-icon img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    align-items: center;
-    transition: transform 0.3s;
-}
-
-.whatsapp-icon img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
 /* Estilo do Menu Mobile */
 
 .btn-abrir-menu i{
@@ -176,6 +153,33 @@ header .logo img {
     z-index: 88888;
     display: none;
 }
+
+
+/* Ícones de WhatsApp */
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    align-items: center;
+    transition: transform 0.3s;
+    border: 2px solid #000;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Carossel */
 
@@ -347,6 +351,26 @@ footer {
 
 /* Media */
 
+@media screen and (min-width: 769px) {
+
+    /* Exibe o menu desktop e esconde o menu mobile em telas grandes */
+
+        /* Navegação */
+
+    .nav {
+        display: flex;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    .btn-abrir-menu {
+        display: none;
+    }
+
+}
+
 @media (max-width: 480px) {
 
     /* Responsividade para smartphones (telas menores que 480px) */
@@ -414,22 +438,4 @@ footer {
 
 }
 
-@media screen and (min-width: 769px) {
 
-    /* Exibe o menu desktop e esconde o menu mobile em telas grandes */
-
-        /* Navegação */
-
-    .nav {
-        display: flex;
-    }
-
-    .nav-mobile {
-        display: none;
-    }
-
-    .btn-abrir-menu {
-        display: none;
-    }
-
-}
