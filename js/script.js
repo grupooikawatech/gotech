@@ -116,7 +116,7 @@ async function carregarProdutos() {
                     <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">${produto.nome}</h5>
-                        <p class="card-text">Preço: R$ ${produto.preco.toFixed(2)}</p>
+                        <p class="card-text">Preço: R$ ${produto.preco}</p>
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#produtoModal" onclick="mostrarDetalhes(${produto.id})">
                             Ver detalhes
                         </button>
@@ -133,16 +133,19 @@ async function carregarProdutos() {
 
 async function mostrarDetalhes(id) {
     try {
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?id=${id}`);
+        const response = await fetch(`https://fenixreborn.com.br/listar_produto.php?id=${id}`);
         const produto = await response.json();
-        const modalContent = document.getElementById('modalContent');
 
-        modalContent.innerHTML = `
-            <p><strong>Nome:</strong> ${produto.nome}</p>
-            <p><strong>Descrição:</strong> ${produto.descricao}</p>
-            <p><strong>Preço:</strong> R$ ${produto.preco.toFixed(2)}</p>
-            <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar Agora</a>
-        `;
+        // Preencher o modal com os detalhes do produto
+        document.getElementById('modalImagem').src = produto.imagem || 'default.jpg';
+        document.getElementById('modalNome').textContent = produto.nome;
+        document.getElementById('modalDescricao').textContent = produto.descricao;
+        document.getElementById('modalPreco').textContent = produto.preco;
+        document.getElementById('modalLinkCompra').href = produto.link_compra || '#';
+
+        // Exibir o modal
+        const modal = new bootstrap.Modal(document.getElementById('produtoModal'));
+        modal.show();
     } catch (erro) {
         console.error('Erro ao carregar detalhes do produto:', erro);
     }
