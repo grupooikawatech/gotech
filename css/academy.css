@@ -605,3 +605,60 @@ footer {
 
 }
 
+/* Estilo do modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+  }
+  
+  /* Conteúdo do modal */
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  /* Botão de fechar */
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Imagem do produto */
+  .modal-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  /* Botão de compra */
+  .modal-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .modal-btn:hover {
+    background-color: #218838;
+  }

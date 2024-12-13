@@ -93,23 +93,16 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="produtoModal" tabindex="-1" aria-labelledby="produtoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div id="produtoModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="produtoModalLabel">Detalhes do Produto</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <img id="modalImagem" src="" alt="" class="img-fluid mb-3" style="max-height: 300px;">
-            <h4 id="modalNome"></h4>
-            <p id="modalDescricao"></p>
-            <p><strong>Preço: R$ <span id="modalPreco"></span></strong></p>
-            <a id="modalLinkCompra" href="#" target="_blank" class="btn btn-success">Comprar</a>
-            </div>
+          <span class="modal-close" id="modalClose">&times;</span>
+          <img id="modalImagem" src="" alt="Imagem do Produto" class="modal-img">
+          <h2 id="modalNome"></h2>
+          <p id="modalDescricao"></p>
+          <p><strong>Preço: R$ <span id="modalPreco"></span></strong></p>
+          <a id="modalLinkCompra" href="#" target="_blank" class="modal-btn">Comprar</a>
         </div>
-        </div>
-    </div>
+      </div>
 
 
 

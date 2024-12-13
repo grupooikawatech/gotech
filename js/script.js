@@ -117,7 +117,7 @@ async function carregarProdutos() {
                     <div class="card-body">
                         <h5 class="card-title">${produto.nome}</h5>
                         <p class="card-text">Preço: R$ ${produto.preco}</p>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#produtoModal" onclick="mostrarDetalhes(${produto.id})">
+                        <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                             Ver detalhes
                         </button>
                         <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
@@ -133,20 +133,36 @@ async function carregarProdutos() {
 
 async function mostrarDetalhes(id) {
     try {
+        // Faz a requisição ao backend para obter os detalhes do produto
         const response = await fetch(`https://fenixreborn.com.br/listar_produto.php?id=${id}`);
         const produto = await response.json();
 
-        // Preencher o modal com os detalhes do produto
+        // Preenche os elementos do modal com os dados do produto
         document.getElementById('modalImagem').src = produto.imagem || 'default.jpg';
         document.getElementById('modalNome').textContent = produto.nome;
         document.getElementById('modalDescricao').textContent = produto.descricao;
         document.getElementById('modalPreco').textContent = produto.preco;
         document.getElementById('modalLinkCompra').href = produto.link_compra || '#';
 
-        // Exibir o modal
-        const modal = new bootstrap.Modal(document.getElementById('produtoModal'));
-        modal.show();
+        // Exibe o modal
+        document.getElementById('produtoModal').style.display = 'block';
     } catch (erro) {
         console.error('Erro ao carregar detalhes do produto:', erro);
     }
 }
+
+// Seleciona os elementos do modal e do botão de fechar
+const modal = document.getElementById('produtoModal');
+const modalClose = document.getElementById('modalClose');
+
+// Fechar ao clicar no botão de fechar
+modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Fechar ao clicar fora do conteúdo do modal
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
