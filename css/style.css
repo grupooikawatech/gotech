@@ -642,6 +642,15 @@ footer {
 
     /* Responsividade para smartphones (telas menores que 480px) */
 
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box; 
+    }
+    
     /* Carrossel */
 
     .carousel-item {
@@ -756,6 +765,15 @@ footer {
 @media screen and (max-width: 768px) {
 
     /* Esconde o menu desktop e mostra o menu mobile em telas pequenas */
+
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box; 
+    }
 
     /*Navegação Mobile*/
 

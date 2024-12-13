@@ -265,173 +265,199 @@ header .logo img {
 
 /* Cursos */
 
-.descricao-curso h1{
-    color: #000;
+h1 {
     text-align: center;
+    margin: 20px 0;
+    color: #333;
 }
 
-.cursos {
-    background-color: #ADD0AB;
-    width: 60%; 
-    margin: 0 auto; 
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 20px; 
-    text-align: center; 
-}
-
-.cursos h3 {
-    width: 100%; 
-    margin-bottom: 20px; 
-    font-size: 2em; 
-    color: #000; 
-}
-
-.lista-cursos {
-    background-color: #d0fdd0d0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-    width: 30%; 
-    height: auto;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-}
-
-.lista-cursos:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.lista-cursos h2 {
-    margin: 15px 0;
-    font-size: 1.5em;
-    color: #000;
-}
-
-.lista-cursos img {
-    width: 150px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px; 
-    border-radius: 15px;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal img{
-    width: 200px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px; 
-    border-radius: 15px;
+.container {
+    width: 90%;
+    max-width: auto;
     margin: 0 auto;
 }
 
-
-.modal-content {
-    position: relative;
-    width: 80%;
-    text-align: center;
-    max-width: 400px;
-    max-height: 90vh; 
-    background-color: #ADD0AB;
-    padding: 20px;
-    border-radius: 10px;
-    overflow-y: auto; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.close {
-    background: none;
-    border: none;
-    color: #000;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #619870;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button-container{
+.row {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
+}
+
+.card {
+    border: 1px solid #619870;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: #ADD0AB;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
     width: 100%;
-    margin-top: 10px;
+    height: 200px;
+    object-fit: cover;
 }
 
-.btn-visualizar{
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000;
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.detalhes-btn {
     background-color: #619870;
+    color: #000;
     border: none;
-    border-radius: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s;
+    margin-right: 10px;
 }
 
-.btn-visualizar:hover{
+.detalhes-btn:hover {
+    background-color: #c7dc4f;
+    color: #000;
+}
+
+.btn-success {
+    background-color: #D0FDD0;
+    color: #000;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
     background-color: #000;
     color: #c7dc4f;
-    transform: translateY(2px);
 }
+
+/* Estilo do modal */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
+  
+ 
+  .modal-content {
+    background-color: #ADD0AB;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+  .modal-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+ 
+  .modal-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #D0FDD0;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .modal-btn:hover {
+    background-color: #c7dc4f;
+    color: #000;
+  }
+
 
 /* Comunidade do WhatsApp */
 
-
-.message-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    background-color: #ADD0AB;
+.convite-container {
+    margin: 100px auto;
+    background: #ADD0AB;
+    border: 1px solid #619870;
     border-radius: 10px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.message-box {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
     text-align: center;
+    padding: 20px;
+    justify-content: center;
 }
 
-.message-box h1 {
-    font-size: 2.5em;
-    color: #619870;
+.convite-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.convite-container p {
+    font-size: 16px;
+    color: #555;
     margin-bottom: 20px;
 }
 
-.message-box p {
-    font-size: 1.2em;
-    color: #333;
-    line-height: 1.5;
+.convite-container button {
+    background-color: #619870;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.convite-container button:hover {
+    background-color: #000;
+    color: #c7dc4f;
+}
+
+.convite-container img {
+    width: 100px;
+    margin-bottom: 20px;
 }
 
 /* Icones de WhatsApp */
@@ -542,6 +568,15 @@ footer {
 
     /* Responsividade para smartphones (telas menores que 480px) */
 
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box; 
+    }
+
     /* Carrossel */
 
    .carousel-item {
@@ -559,12 +594,32 @@ footer {
     .carousel-item .overlay p {
         font-size: 0.7rem; 
     }
+
+    /* Cursos */
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-success {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
 }
 
 
 @media screen and (max-width: 768px) {
 
     /* Esconde o menu desktop e mostra o menu mobile em telas pequenas */
+
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box; 
+    }
 
     /*Navegação Mobile*/
 
@@ -603,5 +658,14 @@ footer {
         padding: 8px 15px; 
     }
 
-}
+    /* Cursos */
 
+    .card {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+}
