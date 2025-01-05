@@ -263,6 +263,41 @@ header .logo img {
     }
 }
 
+/*Barra de pesquisa*/
+
+.input-group{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 8px 8px 8px 8px;
+    border-radius: 24px;
+    gap: 8px;
+    margin-bottom: 2rem;
+}
+
+.input-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    min-width: 32px;
+    min-height: 32px;
+    background-color: #619870;
+    align-items: center;
+    color: #000;
+}
+
+.input-field{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.input-field:focus{
+    outline: none;
+}
+
+
 /* Cursos */
 
 h1 {

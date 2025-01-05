@@ -100,6 +100,10 @@ else{
     msgCookies.classList.add('mostrar')
 }
 
+ /* Barra de pesquisa do Academy */
+
+ 
+
 /* Conexão do Back-End com a página Academy */
 
 async function carregarProdutos() {

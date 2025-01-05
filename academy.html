@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link href="/your-path-to-uicons/css/uicons-[your-style].css" rel="stylesheet">
     <title>Fênix Reborn</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
         
                 <div class="nav-mobile" id="nav-mobile">
                     <div class="btn-fechar">
-                        <i class="fi fi-br-cross"></i>
+                        
                     </div>
         
                     <nav>
@@ -83,14 +84,30 @@
         </div>
     </div>
 
+     
 
     <!-- Cursos -->
+     
     <div class="container">
         <h1>Produtos Disponíveis</h1>
-        <div id="produtos" class="row">
+
+        <!-- Barra de pesquisa -->
+
+    <div id="container">
+        <div class="input-group">
+            <div class="input-icon">
+                <i class="fi fi-br-search"></i>
+            </div>
+            
+            <input id="search" type="text" class="input-field" placeholder="Pesquisar">
+        </div>      
+    </div>        
+
+        <div id="produtos" class="row"
             <!-- Os produtos serão carregados aqui -->
         </div>
     </div>
+    
 
     <!-- Modal -->
      
