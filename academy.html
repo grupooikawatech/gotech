@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
-    <link href="/your-path-to-uicons/css/uicons-[your-style].css" rel="stylesheet">
     <title>Fênix Reborn</title>
 </head>
 <body>
@@ -102,16 +101,14 @@
                 <input id="search" type="text" class="input-field" placeholder="Pesquisar" oninput="pesquisarCursos()">
                 <div id="resultados" class="resultados"></div>
             </div>      
-        </div>        
+        </div> 
+        <!-- Categorias -->
+        <div id="categorias" class="categorias-container"></div>       
 
         <div id="produtos" class="row"
             <!-- Os produtos serão carregados aqui -->
         </div>
     </div>
-    
-    <!-- Categorias -->
-    <div id="categorias" class="categorias-container"></div>
-    <div id="produtos-categoria" class="produtos-categoria-container"></div>
 
     <!-- Modal -->
      
@@ -124,19 +121,27 @@
           <p><strong>Preço: R$ <span id="modalPreco"></span></strong></p>
           <a id="modalLinkCompra" href="#" target="_blank" class="modal-btn">Comprar</a>
         </div>
-      </div>
-
-
-
-    <div class="convite-container">
-        <img src="img/whatsapp-academy.png" alt="WhatsApp Logo">
-        <h1>Junte-se à nossa comunidade!</h1>
-        <p>Participe de nossa comunidade de cursos no WhatsApp e tenha acesso a conteúdos exclusivos, suporte e networking.</p>
-        <a href="https://chat.whatsapp.com/BO9boq004m89pmeqdPjRRH"><button>Entrar na Comunidade</button></a>
     </div>
+
+
+
+        <div class="convite-container">
+            <img src="img/whatsapp-academy.png" alt="WhatsApp Logo">
+            <h1>Junte-se à nossa comunidade!</h1>
+            <p>Participe de nossa comunidade de cursos no WhatsApp e tenha acesso a conteúdos exclusivos, suporte e networking.</p>
+            <a href="https://chat.whatsapp.com/BO9boq004m89pmeqdPjRRH"><button>Entrar na Comunidade</button></a>
+        </div>
  
             
-       
+        <div class="cookies-msg" id="cookies-msg" role="alert" aria-live="polite">
+            <div class="cookies-txt">
+                <p>Este site usa cookies para melhorar a sua experiência.</p>
+                
+                <div class="cookies-btn">
+                    <button onclick="aceito()" aria-label="Aceitar cookies">Aceito</button>
+                </div>
+            </div>
+        </div>      
 
         <a href="https://wa.me/5518996667483" class="whatsapp-icon" target="_blank" aria-label="Fale conosco no WhatsApp">
             <img src="img/whatsapp-academy.png" alt="Ícone do WhatsApp">

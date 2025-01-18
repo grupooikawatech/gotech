@@ -1,38 +1,32 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json");
 
-// Conexão com o banco de dados
+$conn = new mysqli("193.203.175.154:3306", "u196497167_admin", "OculosEscuro@132", "u196497167_fenixreborn");
 
-$host = "193.203.175.154:3306";
-$usuario = "u196497167_admin";
-$senha = "OculosEscuro@132";
-$banco = "u196497167_fenixreborn";
-
-$conexao = new mysqli($host, $usuario, $senha, $banco);
-
-if ($conexao->connect_error) {
-    die("Erro de conexão: " . $conexao->connect_error);
+if ($conn->connect_error) {
+    http_response_code(500);
+    echo json_encode(["erro" => "Erro de conexão com o banco de dados"]);
+    exit;
 }
 
-// Buscar dados da tabela de produtos
+// Verificar se o parâmetro de categoria foi passado
+$categoria_id = isset($_GET['categoria_id']) ? intval($_GET['categoria_id']) : null;
 
-$sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM academy";
-$resultado = $conexao->query($sql);
-
-$cursos= [];
-
-if ($resultado->num_rows > 0) {
-    while ($linha = $resultado->fetch_assoc()) {
-        $cursos[] = $linha;
-    }
+$sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM produtos";
+if ($categoria_id) {
+    $sql .= " WHERE categoria_id = $categoria_id"; // Filtrar pela categoria
 }
 
-// Retornar os dados em formato JSON
+$result = $conn->query($sql);
 
-header('Content-Type: application/json');
-echo json_encode($cursos);
+$produtos = [];
+while ($row = $result->fetch_assoc()) {
+    $produtos[] = $row;
+}
 
-$conexao->close();
+echo json_encode($produtos);
 
+$conn->close();
 ?>

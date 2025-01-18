@@ -1,3 +1,6 @@
+// URL do script PHP que lista as categorias
+const URL_LISTAR_CATEGORIAS = "https://fenixreborn.com.br/listar_categorias.php";
+
 /* Apenas Mobile! */
 
 let btnMenu = document.getElementById('btn-menu')
@@ -100,7 +103,7 @@ else{
     msgCookies.classList.add('mostrar')
 }
 
- /* Barra de pesquisa do Academy */
+/* Barra de pesquisa do Academy */
 
  async function pesquisarCursos() {
     const termo = document.getElementById('search').value;
@@ -139,6 +142,101 @@ else{
         console.error('Erro ao pesquisar cursos:', erro);
     }
 } 
+
+/* Categorias do Academy */
+
+// Função para buscar categorias do banco de dados
+async function carregarCategorias() {
+    try {
+        // Faz a requisição ao script PHP
+        const response = await fetch(URL_LISTAR_CATEGORIAS);
+        
+        // Verifica se a resposta é bem-sucedida
+        if (!response.ok) {
+            throw new Error("Erro ao carregar categorias");
+        }
+
+        // Converte a resposta para JSON
+        const categorias = await response.json();
+
+        // Chama a função para exibir as categorias na interface
+        exibirCategorias(categorias);
+    } catch (error) {
+        console.error("Erro:", error);
+    }
+}
+
+// Função para exibir categorias na interface
+function exibirCategorias(categorias) {
+    // Seleciona o contêiner onde as categorias serão exibidas
+    const categoriasContainer = document.getElementById("categorias");
+
+    // Limpa o contêiner antes de adicionar novos itens
+    categoriasContainer.innerHTML = "";
+
+    // Cria os elementos HTML para cada categoria
+    categorias.forEach(categoria => {
+        const categoriaItem = document.createElement("button");
+        categoriaItem.textContent = categoria.nome;
+        categoriaItem.className = "categoria-botao";
+        categoriaItem.dataset.id = categoria.id;
+
+        // Adiciona evento de clique para filtrar produtos pela categoria
+        categoriaItem.addEventListener("click", () => {
+            filtrarProdutosPorCategoria(categoria.id);
+        });
+
+        categoriasContainer.appendChild(categoriaItem);
+    });
+}
+
+// Função para carregar os produtos filtrados pela categoria
+async function filtrarProdutosPorCategoria(categoriaId) {
+    try {
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?categoria_id=${categoriaId}`);
+        if (!response.ok) {
+            throw new Error(`Erro HTTP: ${response.status}`);
+        }
+        const produtos = await response.json();
+        console.log("Produtos filtrados:", produtos);
+        exibirProdutos(produtos); // Função que exibe os produtos na tela
+    } catch (error) {
+        console.error("Erro ao filtrar produtos:", error.message);
+    }
+}
+
+// Função para exibir produtos na tela
+function exibirProdutos(produtos) {
+    const container = document.getElementById("produtos");
+    if (!container) {
+        console.error("Elemento de produtos não encontrado!");
+        return;
+    }
+
+    // Limpar conteúdo existente
+    container.innerHTML = "";
+
+    // Adicionar produtos
+    produtos.forEach((produto) => {
+        const div = document.createElement("div");
+        div.className = "produto";
+        div.innerHTML = `
+            <h3>${produto.nome}</h3>
+            <p>${produto.descricao}</p>
+            <p><strong>R$ ${produto.preco}</strong></p>
+            <img src="${produto.imagem}" alt="${produto.nome}">
+            <a href="${produto.link_compra}" target="_blank">Comprar</a>
+        `;
+        container.appendChild(div);
+    });
+}
+
+// Chama a função para carregar categorias ao carregar a página
+document.addEventListener("DOMContentLoaded", carregarCategorias);
+
+// Carrega as categorias ao carregar a página
+carregarCategorias();
+
 
 /* Conexão do Back-End com a página Academy */
 
