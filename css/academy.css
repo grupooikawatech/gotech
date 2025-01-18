@@ -527,6 +527,53 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Aceitar Cookies */
+
+.cookies-msg{
+    width: 45%;
+    background-color: #5FBFF9;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 15px;
+    border: 2px solid #22223B;
+    display: none;
+}
+
+.cookies-msg.mostrar{
+    display: block;
+}
+.cookies-msg .cookies-txt{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    color: #fff;
+}
+
+.cookies-msg .cookies-btn{
+    margin-left: 30px;
+}
+
+.cookies-msg .cookies-btn button{
+    background-color: #22223B;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    border-radius: 20px;
+}
+
+.cookies-msg .cookies-btn button:hover{
+    transform: scale(0.9);
+    background-color: #fff;
+    color: #000;
+}
+
 /* Icones de WhatsApp */
 
 .whatsapp-icon {

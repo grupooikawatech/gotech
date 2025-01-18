@@ -10,12 +10,19 @@ if ($conn->connect_error) {
     exit;
 }
 
+// Verificar o valor de categoria_id
 $categoria_id = isset($_GET['categoria_id']) ? intval($_GET['categoria_id']) : null;
 
+// Montar a consulta SQL
 $sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM academy";
-if ($categoria_id) {
-    $sql .= " WHERE categoria_id = $categoria_id"; // Filtrar pela categoria
+
+// Se categoria_id for diferente de 3, filtra os produtos pela categoria
+if ($categoria_id && $categoria_id !== 3) {
+    $sql .= " WHERE categoria_id = $categoria_id";
 }
+
+// Exibir a consulta SQL para depuração (remover em produção)
+echo "Consulta SQL: " . $sql . "<br>";
 
 $result = $conn->query($sql);
 if (!$result) {
@@ -27,6 +34,7 @@ while ($row = $result->fetch_assoc()) {
     $produtos[] = $row;
 }
 
+// Retornar os produtos no formato JSON
 echo json_encode($produtos);
 
 $conn->close();
