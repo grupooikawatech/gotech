@@ -301,13 +301,50 @@ header .logo img {
     margin-top: 20px;
   }
   
-  .resultado-item {
+.resultado-item {
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: #f9f9f9;
     text-align: left;
+}
+
+/*Categorias*/
+
+.categorias-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .categoria-tab {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .categoria-tab.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .produtos-categoria-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .produto-categoria-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    text-align: center;
   }
 
 /* Cursos */
