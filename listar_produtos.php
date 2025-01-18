@@ -21,9 +21,6 @@ if ($categoria_id && $categoria_id !== 3) {
     $sql .= " WHERE categoria_id = $categoria_id";
 }
 
-// Exibir a consulta SQL para depuração (remover em produção)
-echo "Consulta SQL: " . $sql . "<br>";
-
 $result = $conn->query($sql);
 if (!$result) {
     die("Erro na consulta: " . $conn->error);
