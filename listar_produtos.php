@@ -1,5 +1,4 @@
 <?php
-
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
@@ -11,15 +10,17 @@ if ($conn->connect_error) {
     exit;
 }
 
-// Verificar se o parâmetro de categoria foi passado
 $categoria_id = isset($_GET['categoria_id']) ? intval($_GET['categoria_id']) : null;
 
-$sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM produtos";
+$sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM academy";
 if ($categoria_id) {
     $sql .= " WHERE categoria_id = $categoria_id"; // Filtrar pela categoria
 }
 
 $result = $conn->query($sql);
+if (!$result) {
+    die("Erro na consulta: " . $conn->error);
+}
 
 $produtos = [];
 while ($row = $result->fetch_assoc()) {
