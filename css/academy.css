@@ -263,6 +263,42 @@ header .logo img {
     }
 }
 
+
+/* Texto Inicial */
+
+.container-text {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #619870;
+}
+.highlight {
+    font-weight: bold;
+    color: #619870;
+}
+.emoji {
+    font-size: 1.5em;
+}
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #619870;
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.cta-button:hover {
+    background-color: #c7dc4f;
+}
+
 /*Barra de pesquisa*/
 
 .input-group{
@@ -314,20 +350,40 @@ header .logo img {
 
 .categorias-container {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    height: 20vh; 
 }
+
 .categoria-botao {
     padding: 10px 20px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    cursor: pointer;
-    border-radius: 5px;
     font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #619870;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
+
 .categoria-botao:hover {
-    background-color: #e0e0e0;
+    background-color: #c7dc4f;
+    transform: scale(1.05);
 }
+
+.categoria-botao:active {
+    background-color: #c7dc4f;
+    transform: scale(0.95);
+}
+
+
+
+
 
 /* Cursos */
 
@@ -417,6 +473,9 @@ h1 {
     background-color: #000;
     color: #c7dc4f;
 }
+
+
+
 
 /* Estilo do modal */
 
