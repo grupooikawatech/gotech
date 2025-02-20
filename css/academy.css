@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth; /* Habilita a rolagem suave para toda a página */
+}
+
 body {
     font-family: "Teko", sans-serif;
     background-color: #D0FDD0;
@@ -284,12 +288,15 @@ h1 {
 .emoji {
     font-size: 1.5em;
 }
+.button-container {
+    text-align: center; /* Centraliza o botão sem afetar os textos */
+}
 .cta-button {
-    display: inline-block;
-    margin-top: 20px;
+    display: inline-block; /* Mantém o tamanho natural do botão */
+    margin-top: 20px; /* Adiciona espaçamento acima */
     padding: 10px 20px;
     background-color: #619870;
-    color: #000;
+    color: #FFF;
     text-decoration: none;
     font-size: 18px;
     border-radius: 5px;
@@ -344,6 +351,63 @@ h1 {
     border-radius: 5px;
     background-color: #f9f9f9;
     text-align: left;
+}
+
+/* Barra de pesquisa */
+#search-container {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em coluna */
+    width: 100%;
+}
+
+/* Barra de pesquisa */
+#search {
+    width: 100%; /* A barra de pesquisa ocupará toda a largura disponível */
+    padding: 10px;
+    margin-bottom: 10px; /* Espaço entre a barra e os resultados */
+}
+
+/* Resultados da pesquisa */
+#resultados {
+    width: 100%; /* Garante que os resultados ocupem toda a largura */
+    margin-top: 10px; /* Espaço entre a barra de pesquisa e os resultados */
+    display: flex;
+    flex-direction: column; /* Exibe os resultados em uma coluna */
+}
+
+.resultado-item {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Estilo do botão de compra na barra de pesquisa */
+.btn-comprar {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #619870; /* Cor vibrante para chamar atenção */
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(255, 111, 97, 0.2); /* Sombra sutil */
+    margin-top: 15px; /* Distância do conteúdo acima */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.btn-comprar:hover {
+    background-color: #c7dc4f; /* Cor mais escura para hover */
+    transform: scale(1.05); /* Aumenta o tamanho do botão */
+}
+
+/* Efeito ao clicar no botão */
+.btn-comprar:active {
+    background-color: #09ff00; /* Cor mais intensa quando pressionado */
+    transform: scale(0.98); /* Diminui o tamanho do botão ao clicar */
 }
 
 /*Categorias*/

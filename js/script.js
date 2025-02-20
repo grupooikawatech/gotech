@@ -59,6 +59,36 @@ carousels.forEach((carousel) => {
     updateCarousel();
 });
 
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+let currentIndex = 0;
+const itemCount = items.length;
+const intervalTime = 10000; // 10 seconds
+
+const updateCarousel = () => {
+    const offset = -currentIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+};
+
+const showNextItem = () => {
+    currentIndex = (currentIndex + 1) % itemCount;
+    updateCarousel();
+};
+
+const showPrevItem = () => {
+    currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+    updateCarousel();
+};
+
+nextButton.addEventListener('click', showNextItem);
+prevButton.addEventListener('click', showPrevItem);
+
+// Automatic transition every 10 seconds
+setInterval(showNextItem, intervalTime);
+
 
 /* Modal */
 
@@ -103,6 +133,10 @@ else{
     msgCookies.classList.add('mostrar')
 }
 
+function scrollToSection(event) {
+    event.preventDefault();
+    document.getElementById('search-container').scrollIntoView({ behavior: 'smooth' });
+}
 /* Barra de pesquisa do Academy */
 
  async function pesquisarCursos() {
@@ -218,16 +252,22 @@ function exibirProdutos(produtos) {
 
     // Adicionar produtos
     produtos.forEach((produto) => {
-        const div = document.createElement("div");
-        div.className = "produto";
-        div.innerHTML = `
-            <h3>${produto.nome}</h3>
-            <p>${produto.descricao}</p>
-            <p><strong>R$ ${produto.preco}</strong></p>
-            <img src="${produto.imagem}" alt="${produto.nome}">
-            <a href="${produto.link_compra}" target="_blank">Comprar</a>
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'mb-4');
+        card.innerHTML = `
+            <div class="card">
+                <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">${produto.nome}</h5>
+                    <p class="card-text">Preço: R$ ${produto.preco}</p>
+                    <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
+                        Ver detalhes
+                    </button>
+                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
+                </div>
+            </div>
         `;
-        container.appendChild(div);
+        container.appendChild(card);
     });
 }
 

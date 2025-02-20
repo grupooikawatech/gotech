@@ -117,30 +117,27 @@
         <h2>📲 Não perca tempo!</h2>
         <p>Clique no link ao final da página e venha fazer parte da revolução no ensino com a Fênix Reborn Academy! 🚀</p>
         
-        <a href="#" class="cta-button">Inscreva-se agora</a>
+        <div class="button-container">
+            <a href="#" class="cta-button" onclick="scrollToSection(event)">Inscreva-se agora</a>
+        </div>
     </div>
 
     <!-- Cursos -->
      
     <div class="container">
-        <h1>Produtos Disponíveis</h1>
+        <h1>Ofertas Disponíveis</h1>
 
         <!-- Barra de pesquisa -->
 
-        <div id="container">
-            <div class="input-group">
-                <div class="input-icon">
-                    <i class="fi fi-br-search"></i>
-                </div>
-                
-                <input id="search" type="text" class="input-field" placeholder="Pesquisar" oninput="pesquisarCursos()">
-                <div id="resultados" class="resultados"></div>
-            </div>      
-        </div> 
+        <div id="search-container">
+            <input type="text" id="search" placeholder="Pesquise cursos..." onkeyup="pesquisarCursos()">
+        </div>
+        
+        <div id="resultados"></div>
         <!-- Categorias -->
         <div id="categorias" class="categorias-container"></div>       
 
-        <div id="produtos" class="row"
+        <div id="produtos" class="row">
             <!-- Os produtos serão carregados aqui -->
         </div>
     </div>
@@ -188,12 +185,13 @@
                     <h4>Redes Sociais</h4>
                     <a href="https://www.facebook.com/profile.php?id=61569761956944" aria-label="Facebook"><p>Facebook</p></a> 
                     <a href="https://www.instagram.com/fenixreborndesignetecnologia/" aria-label="Instagram"><p>Instagram</p></a>
+                    <a href="#" aria-label="TikTok"><p>TikTok</p></a>
                 </div>
-
                 <div class="contatos">
                     <h4>Contatos</h4>
                     <p>Telefone: (18) 99666-7483</p>
                     <p>E-mail: tecnologia@fenixreborn.com.br</p>
+                    <p>CNPJ: 57.030.230/0001-10</p>
                 </div>
             </div>
             <p style="color: #000;">&copy; 2025 Fenix Reborn. Todos os direitos reservados.</p>
