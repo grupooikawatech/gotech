@@ -445,6 +445,30 @@ footer {
     .carousel-item .overlay p {
         font-size: 0.7rem; 
     }
+
+
+    /* Aceitar Cookies */
+
+    .cookies-msg {
+        width: 90%;
+        bottom: 10%;
+        padding: 10px;
+    }
+
+    .cookies-msg .cookies-txt {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .cookies-msg .cookies-btn {
+        margin: 10px 0 0 0;
+    }
+
+    .cookies-msg .cookies-btn button {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
 }
 
 
@@ -487,6 +511,28 @@ footer {
 
     .carousel-buttons button {
         padding: 8px 15px; 
+    }
+
+    /* Aceitar Cookies */
+
+    .cookies-msg {
+        width: 70%;
+        bottom: 7%;
+        padding: 15px;
+    }
+
+    .cookies-msg .cookies-txt {
+        text-align: justify;
+        padding: 15px;
+    }
+
+    .cookies-msg .cookies-btn {
+        margin-left: 15px;
+    }
+
+    .cookies-msg .cookies-btn button {
+        font-size: 17px;
+        padding: 10px 30px;
     }
 
 }
