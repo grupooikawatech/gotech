@@ -23,7 +23,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <link rel="stylesheet" href="css/academy.css?v=1.0.2">
+    <link rel="stylesheet" href="css/academy.css?v=1.0.3">
     <link rel="icon" href="img/logo-academy-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,28 +46,23 @@
             <a href="academy.html">Academy</a>
         </div>
 
-                <!-- Menu Mobile -->
+        <!-- Menu Mobile -->
 
-                <div class="btn-abrir-menu" id="btn-menu">
-                    <i class="fi fi-br-menu-burger"></i>
-                </div>
-        
-                <div class="nav-mobile" id="nav-mobile">
-                    <div class="btn-fechar">
-                        
-                    </div>
-        
-                    <nav>
-                        <ul>
-                            <li><a href="index.html">Página Inicial</a></li>
-                            <li><a href="store.html">Store</a></li>
-                            <li><a href="academy.html">Academy</a></li>
-                        </ul>
-                    </nav>
-        
-                </div> 
-        
-                <div class="overlay-menu" id="overlay-menu"></div>
+        <div class="btn-abrir-menu" id="btn-menu">
+            <i class="fi fi-br-menu-burger"></i>
+        </div>
+        <div class="nav-mobile" id="nav-mobile">
+            <div class="btn-fechar"> 
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="store.html">Store</a></li>
+                    <li><a href="academy.html">Academy</a></li>
+                </ul>
+            </nav>
+        </div> 
+        <div class="overlay-menu" id="overlay-menu"></div>
     </header>
 
 
@@ -104,59 +99,59 @@
 
 
     <!-- Sobre os cursos -->
-    
-    <div class="container-text">
-        <h1>Bem-vindo à Fênix Reborn Academy! <span class="emoji">🔥</span></h1>
-        <p><span class="highlight">Transforme o seu futuro com nossos cursos de alta qualidade!</span></p>
-        
-        <h2>🎓 Descontos e bônus imperdíveis:</h2>
-        <p><strong>Graduação:</strong> Ganhe um bônus de R$50,00 ao se inscrever pelo nosso Vestibular Online (válido apenas para os cursos da UNINTER)! Temos também ofertas exclusivas de outras instituições parceiras!</p>
-        <p><strong>Pós-Graduação, Extensão e Aperfeiçoamento:</strong> Descontos especiais em todos os nossos cursos EAD.</p>
-        <p><strong>Cursos Livres Profissionalizantes:</strong> Invista em sua carreira com condições exclusivas!</p>
-        
-        <h2>💡 Seja parte de uma comunidade inovadora!</h2>
-        <p>Conecte-se com alunos e profissionais que compartilham os mesmos objetivos. Acesse nossa comunidade exclusiva e explore oportunidades de aprendizado, networking e crescimento.</p>
-        
-        <h2>📲 Não perca tempo!</h2>
-        <p>Clique no link ao final da página e venha fazer parte da revolução no ensino com a Fênix Reborn Academy! 🚀</p>
-        
-        <div class="button-container">
-            <a href="#" class="cta-button" onclick="scrollToSection(event)">Inscreva-se agora</a>
+    <main>
+        <div class="container-text">
+            <h1>Bem-vindo à Fênix Reborn Academy! <span class="emoji">🔥</span></h1>
+            <p><span class="highlight">Transforme o seu futuro com nossos cursos de alta qualidade!</span></p>
+            
+            <h2>🎓 Descontos e bônus imperdíveis:</h2>
+            <p><strong>Graduação:</strong> Ganhe um bônus de R$50,00 ao se inscrever pelo nosso Vestibular Online (válido apenas para os cursos da UNINTER)! Temos também ofertas exclusivas de outras instituições parceiras!</p>
+            <p><strong>Pós-Graduação, Extensão e Aperfeiçoamento:</strong> Descontos especiais em todos os nossos cursos EAD.</p>
+            <p><strong>Cursos Livres Profissionalizantes:</strong> Invista em sua carreira com condições exclusivas!</p>
+            
+            <h2>💡 Seja parte de uma comunidade inovadora!</h2>
+            <p>Conecte-se com alunos e profissionais que compartilham os mesmos objetivos. Acesse nossa comunidade exclusiva e explore oportunidades de aprendizado, networking e crescimento.</p>
+            
+            <h2>📲 Não perca tempo!</h2>
+            <p>Clique no link ao final da página e venha fazer parte da revolução no ensino com a Fênix Reborn Academy! 🚀</p>
+            
+            <div class="button-container">
+                <a href="#" class="cta-button" onclick="scrollToSection(event)">Inscreva-se agora</a>
+            </div>
         </div>
-    </div>
 
-    <!-- Cursos -->
-     
-    <div class="container">
-        <h1>Ofertas Disponíveis</h1>
-
-        <!-- Barra de pesquisa -->
-
-        <div id="search-container">
-            <input type="text" id="search" placeholder="Pesquise cursos..." onkeyup="pesquisarCursos()">
-        </div>
+        <!-- Cursos -->
         
-        <div id="resultados"></div>
-        <!-- Categorias -->
-        <div id="categorias" class="categorias-container"></div>       
+        <div class="container">
+            <h1>Ofertas Disponíveis</h1>
 
-        <div id="produtos" class="row">
-            <!-- Os produtos serão carregados aqui -->
-        </div>
-    </div>
+            <!-- Barra de pesquisa -->
 
-    <!-- Modal -->
-     
-    <div id="produtoModal" class="modal">
-        <div class="modal-content">
-          <span class="modal-close" id="modalClose">&times;</span>
-          <img id="modalImagem" src="" alt="Imagem do Produto" class="modal-img">
-          <h2 id="modalNome"></h2>
-          <p id="modalDescricao"></p>
-          <p><strong>Preço: R$ <span id="modalPreco"></span></strong></p>
-          <a id="modalLinkCompra" href="#" target="_blank" class="modal-btn">Comprar</a>
+            <div id="search-container">
+                <input type="text" id="search" placeholder="Pesquise cursos..." onkeyup="pesquisarCursos()">
+            </div>
+            
+            <div id="resultados"></div>
+            <!-- Categorias -->
+            <div id="categorias" class="categorias-container"></div>       
+
+            <div id="produtos" class="row">
+                <!-- Os produtos serão carregados aqui -->
+            </div>
         </div>
-    </div>
+
+        <!-- Modal -->
+        
+        <div id="produtoModal" class="modal">
+            <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img id="modalImagem" src="" alt="Imagem do Produto" class="modal-img">
+            <h2 id="modalNome"></h2>
+            <p id="modalDescricao"></p>
+            <p><strong>Preço: R$ <span id="modalPreco"></span></strong></p>
+            <a id="modalLinkCompra" href="#" target="_blank" class="modal-btn">Comprar</a>
+            </div>
+        </div>
 
 
 
@@ -201,7 +196,7 @@
         </footer>
     </main>
 
-    <script src="js/script.js?v=1.0.2"></script>
+    <script src="js/script.js?v=1.0.3"></script>
     <script>
         // Chamar a função para carregar produtos ao abrir a página
         document.addEventListener('DOMContentLoaded', carregarProdutos);
