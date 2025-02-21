@@ -337,7 +337,7 @@ async function filtrarProdutosPorCategoriaStore(categoriaId) {
         }
         const produtos = await response.json();
         console.log("Produtos filtrados:", produtos);
-        exibirProdutos(produtos); // Função que exibe os produtos na tela
+        exibirProdutosStore(produtos); // Função que exibe os produtos na tela
     } catch (error) {
         console.error("Erro ao filtrar produtos:", error.message);
     }
@@ -365,6 +365,38 @@ function exibirProdutos(produtos) {
                     <h5 class="card-title">${produto.nome}</h5>
                     <p class="card-text">Preço: R$ ${produto.preco}</p>
                     <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
+                        Ver detalhes
+                    </button>
+                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Função para exibir produtos na tela do Store
+function exibirProdutosStore(produtos) {
+    const container = document.getElementById("produtos");
+    if (!container) {
+        console.error("Elemento de produtos não encontrado!");
+        return;
+    }
+
+    // Limpar conteúdo existente
+    container.innerHTML = "";
+
+    // Adicionar produtos
+    produtos.forEach((produto) => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4', 'mb-4');
+        card.innerHTML = `
+            <div class="card">
+                <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">${produto.nome}</h5>
+                    <p class="card-text">Preço: R$ ${produto.preco}</p>
+                    <button onclick="mostrarDetalhesStore(${produto.id})" class="detalhes-btn">
                         Ver detalhes
                     </button>
                     <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
