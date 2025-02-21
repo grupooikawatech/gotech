@@ -183,7 +183,6 @@ header .logo img {
 
 /* Carossel */
 
-/*
 .carousel {
     width: 100%;
     max-width: 100%;
@@ -232,7 +231,7 @@ header .logo img {
 .carousel-item .overlay h3 {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: #5FBFF9; 
+    color: #f3723b; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     animation: textZoom 1.2s ease-in-out forwards; 
 }
@@ -268,11 +267,11 @@ header .logo img {
 .carousel-buttons button:hover {
     transform: scale(1.1); 
     background-color: rgba(0, 0, 0, 0.7);
-} */
+}
 
 /* Animações Carrossel */
 
-/* @keyframes fadeInUp {
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translate(-50%, -60%);
@@ -299,9 +298,63 @@ header .logo img {
     to {
         opacity: 1;
     }
-} */
+}
 
 
+
+
+
+
+
+
+
+
+/* Aceitar Cookies */
+
+.cookies-msg{
+    width: 45%;
+    background-color: #f3723b;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 15px;
+    border: 2px solid #22223B;
+    display: none;
+}
+
+.cookies-msg.mostrar{
+    display: block;
+}
+.cookies-msg .cookies-txt{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    color: #fff;
+}
+
+.cookies-msg .cookies-btn{
+    margin-left: 30px;
+}
+
+.cookies-msg .cookies-btn button{
+    background-color: #22223B;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    border-radius: 20px;
+}
+
+.cookies-msg .cookies-btn button:hover{
+    transform: scale(0.9);
+    background-color: #fff;
+    color: #000;
+}
 
 
 /* Rodapé */
@@ -377,7 +430,7 @@ footer {
 
     /* Carrossel */
 
-  /*.carousel-item {
+  .carousel-item {
         height: 300px; 
     }
 
@@ -391,7 +444,7 @@ footer {
 
     .carousel-item .overlay p {
         font-size: 0.7rem; 
-    }*/
+    }
 }
 
 
@@ -415,7 +468,7 @@ footer {
 
     /* Carrossel */
 
-   /* .carousel-item {
+   .carousel-item {
         height: 400px; 
     }
 
@@ -434,7 +487,7 @@ footer {
 
     .carousel-buttons button {
         padding: 8px 15px; 
-    } */
+    }
 
 }
 
