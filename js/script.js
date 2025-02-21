@@ -241,6 +241,29 @@ async function carregarCategorias() {
     }
 }
 
+/* Categorias do Store */
+
+// Função para buscar categorias do banco de dados
+async function carregarCategoriasStore() {
+    try {
+        // Faz a requisição ao script PHP
+        const response = await fetch(URL_LISTAR_CATEGORIAS);
+        
+        // Verifica se a resposta é bem-sucedida
+        if (!response.ok) {
+            throw new Error("Erro ao carregar categorias");
+        }
+
+        // Converte a resposta para JSON
+        const categorias = await response.json();
+
+        // Chama a função para exibir as categorias na interface
+        exibirCategoriasStore(categorias);
+    } catch (error) {
+        console.error("Erro:", error);
+    }
+}
+
 // Função para exibir categorias na interface
 function exibirCategorias(categorias) {
     // Seleciona o contêiner onde as categorias serão exibidas
@@ -265,10 +288,49 @@ function exibirCategorias(categorias) {
     });
 }
 
+// Função para exibir categorias na interface
+function exibirCategoriasStore(categorias) {
+    // Seleciona o contêiner onde as categorias serão exibidas
+    const categoriasContainer = document.getElementById("categorias");
+
+    // Limpa o contêiner antes de adicionar novos itens
+    categoriasContainer.innerHTML = "";
+
+    // Cria os elementos HTML para cada categoria
+    categorias.forEach(categoria => {
+        const categoriaItem = document.createElement("button");
+        categoriaItem.textContent = categoria.nome;
+        categoriaItem.className = "categoria-botao";
+        categoriaItem.dataset.id = categoria.id;
+
+        // Adiciona evento de clique para filtrar produtos pela categoria
+        categoriaItem.addEventListener("click", () => {
+            filtrarProdutosPorCategoriaStore(categoria.id);
+        });
+
+        categoriasContainer.appendChild(categoriaItem);
+    });
+}
+
 // Função para carregar os produtos filtrados pela categoria
 async function filtrarProdutosPorCategoria(categoriaId) {
     try {
         const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?categoria_id=${categoriaId}`);
+        if (!response.ok) {
+            throw new Error(`Erro HTTP: ${response.status}`);
+        }
+        const produtos = await response.json();
+        console.log("Produtos filtrados:", produtos);
+        exibirProdutos(produtos); // Função que exibe os produtos na tela
+    } catch (error) {
+        console.error("Erro ao filtrar produtos:", error.message);
+    }
+}
+
+// Função para carregar os produtos filtrados pela categoria
+async function filtrarProdutosPorCategoriaStore(categoriaId) {
+    try {
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?categoria_id=${categoriaId}`);
         if (!response.ok) {
             throw new Error(`Erro HTTP: ${response.status}`);
         }
@@ -311,13 +373,6 @@ function exibirProdutos(produtos) {
         container.appendChild(card);
     });
 }
-
-// Chama a função para carregar categorias ao carregar a página
-document.addEventListener("DOMContentLoaded", carregarCategorias);
-
-// Carrega as categorias ao carregar a página
-carregarCategorias();
-
 
 /* Conexão do Back-End com a página Academy */
 
@@ -369,6 +424,58 @@ async function mostrarDetalhes(id) {
         console.error('Erro ao carregar detalhes do produto:', erro);
     }
 }
+
+/* Conexão do Back-End com a página Store */
+
+async function carregarProdutosStore() {
+    try {
+        const response = await fetch('https://fenixreborn.com.br/listar_produtos_store.php');
+        const produtos = await response.json();
+        const container = document.getElementById('produtos');
+
+        produtos.forEach(produto => {
+            const card = document.createElement('div');
+            card.classList.add('col-md-4', 'mb-4');
+            card.innerHTML = `
+                <div class="card">
+                    <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">${produto.nome}</h5>
+                        <p class="card-text">Preço: R$ ${produto.preco}</p>
+                        <button onclick="mostrarDetalhesStore(${produto.id})" class="detalhes-btn">
+                            Ver detalhes
+                        </button>
+                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    } catch (erro) {
+        console.error('Erro ao carregar produtos:', erro);
+    }
+}
+
+async function mostrarDetalhesStore(id) {
+    try {
+        // Faz a requisição ao backend para obter os detalhes do produto
+        const response = await fetch(`https://fenixreborn.com.br/listar_produto_store.php?id=${id}`);
+        const produto = await response.json();
+
+        // Preenche os elementos do modal com os dados do produto
+        document.getElementById('modalImagem').src = produto.imagem || 'default.jpg';
+        document.getElementById('modalNome').textContent = produto.nome;
+        document.getElementById('modalDescricao').textContent = produto.descricao;
+        document.getElementById('modalPreco').textContent = produto.preco;
+        document.getElementById('modalLinkCompra').href = produto.link_compra || '#';
+
+        // Exibe o modal
+        document.getElementById('produtoModal').style.display = 'block';
+    } catch (erro) {
+        console.error('Erro ao carregar detalhes do produto:', erro);
+    }
+}
+
 
 // Seleciona os elementos do modal e do botão de fechar
 const modal = document.getElementById('produtoModal');

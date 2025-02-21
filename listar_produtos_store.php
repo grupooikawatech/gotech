@@ -14,9 +14,9 @@ if ($conn->connect_error) {
 $categoria_id = isset($_GET['categoria_id']) ? intval($_GET['categoria_id']) : null;
 
 // Montar a consulta SQL
-$sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM academy";
+$sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM store";
 
-// Se categoria_id for diferente de 1 (geral), filtra os produtos pela categoria
+// Se categoria_id for diferente de 1 (Geral), filtra os produtos pela categoria
 if ($categoria_id && $categoria_id !== 1) {
     $sql .= " WHERE categoria_id = $categoria_id";
 }

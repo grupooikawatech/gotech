@@ -502,7 +502,7 @@ h1 {
 }
 
 .detalhes-btn {
-    background-color: #C38B8B;
+    background-color: #ff5e00;
     color: #000;
     border: none;
     padding: 10px 15px;
@@ -513,12 +513,12 @@ h1 {
 }
 
 .detalhes-btn:hover {
-    background-color: #f3723b;
+    background-color: #ff5e0056;
     color: #000;
 }
 
 .btn-success {
-    background-color: #C38B8B;
+    background-color: #ff5e00;
     color: #000;
     border: none;
     padding: 6px 15px;
@@ -551,7 +551,7 @@ h1 {
   
  
   .modal-content {
-    background-color: #AF6565;
+    background-color: #f3723b;
     margin: 10% auto;
     padding: 20px;
     border-radius: 8px;
@@ -583,7 +583,7 @@ h1 {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #f3723b;
+    background-color: #ff3c006b;
     color: #000;
     text-decoration: none;
     border-radius: 5px;
@@ -591,7 +591,7 @@ h1 {
   }
   
   .modal-btn:hover {
-    background-color: #C38B8B;
+    background-color: rgba(243, 114, 59, 0.678);
     color: #000;
   }
 
@@ -624,7 +624,7 @@ h1 {
 }
 
 .convite-container button {
-    background-color: #f3723b;
+    background-color: #f3723b9f;
     color: #000;
     border: none;
     border-radius: 5px;
@@ -636,7 +636,7 @@ h1 {
 
 .convite-container button:hover {
     background-color: #000;
-    color: #AF6565;
+    color: #f3723bd2;
 }
 
 .convite-container img {
