@@ -137,6 +137,7 @@ function scrollToSection(event) {
     event.preventDefault();
     document.getElementById('search-container').scrollIntoView({ behavior: 'smooth' });
 }
+
 /* Barra de pesquisa do Academy */
 
  async function pesquisarCursos() {
@@ -174,6 +175,46 @@ function scrollToSection(event) {
         }
     } catch (erro) {
         console.error('Erro ao pesquisar cursos:', erro);
+    }
+} 
+
+/* Barra de pesquisa do Store */
+
+async function pesquisarProdutos() {
+    const termo = document.getElementById('search').value;
+
+    // Evita busca se a barra estiver vazia
+    if (termo.trim() === '') {
+        document.getElementById('resultados').innerHTML = '';
+        return;
+    }
+
+    try {
+        const response = await fetch(`https://fenixreborn.com.br/search_store.php?termo=${encodeURIComponent(termo)}`);
+        const cursos = await response.json();
+
+        // Limpar resultados anteriores
+        const resultadosDiv = document.getElementById('resultados');
+        resultadosDiv.innerHTML = '';
+
+        // Exibir cursos encontrados
+        cursos.forEach(curso => {
+            const cursoDiv = document.createElement('div');
+            cursoDiv.classList.add('resultado-item');
+            cursoDiv.innerHTML = `
+                <h3>${curso.nome}</h3>
+                <p>${curso.descricao}</p>
+                <p><strong>Preço: R$ ${parseFloat(curso.preco).toFixed(2)}</strong></p>
+                <a href="${curso.link_compra}" target="_blank" class="btn-comprar">Comprar</a>
+            `;
+            resultadosDiv.appendChild(cursoDiv);
+        });
+
+        if (cursos.length === 0) {
+            resultadosDiv.innerHTML = '<p>Nenhum produto encontrado.</p>';
+        }
+    } catch (erro) {
+        console.error('Erro ao pesquisar produtos:', erro);
     }
 } 
 

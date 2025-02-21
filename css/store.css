@@ -300,12 +300,349 @@ header .logo img {
     }
 }
 
+/*Barra de pesquisa*/
+
+.input-group{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 8px 8px 8px 8px;
+    border-radius: 24px;
+    gap: 8px;
+    margin-bottom: 2rem;
+}
+
+.input-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    min-width: 32px;
+    min-height: 32px;
+    background-color: #f3723b;
+    align-items: center;
+    color: #000;
+}
+
+.input-field{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.input-field:focus{
+    outline: none;
+}
+
+.resultados {
+    margin-top: 20px;
+  }
+  
+.resultado-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+/* Barra de pesquisa */
+#search-container {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em coluna */
+    width: 100%;
+}
+
+/* Barra de pesquisa */
+#search {
+    width: 100%; /* A barra de pesquisa ocupará toda a largura disponível */
+    padding: 10px;
+    margin-bottom: 10px; /* Espaço entre a barra e os resultados */
+}
+
+/* Resultados da pesquisa */
+#resultados {
+    width: 100%; /* Garante que os resultados ocupem toda a largura */
+    margin-top: 10px; /* Espaço entre a barra de pesquisa e os resultados */
+    display: flex;
+    flex-direction: column; /* Exibe os resultados em uma coluna */
+}
+
+.resultado-item {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Estilo do botão de compra na barra de pesquisa */
+.btn-comprar {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #f3723b; /* Cor vibrante para chamar atenção */
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(255, 111, 97, 0.2); /* Sombra sutil */
+    margin-top: 15px; /* Distância do conteúdo acima */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.btn-comprar:hover {
+    background-color: #C38B8B; /* Cor mais escura para hover */
+    transform: scale(1.05); /* Aumenta o tamanho do botão */
+}
+
+/* Efeito ao clicar no botão */
+.btn-comprar:active {
+    background-color: #AF6565; /* Cor mais intensa quando pressionado */
+    transform: scale(0.98); /* Diminui o tamanho do botão ao clicar */
+}
+
+/*Categorias*/
+
+.categorias-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    height: 20vh; 
+}
+
+.categoria-botao {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #f3723b;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.categoria-botao:hover {
+    background-color: #AF6565;
+    transform: scale(1.05);
+}
+
+.categoria-botao:active {
+    background-color: #C38B8B;
+    transform: scale(0.95);
+}
 
 
 
 
 
+/* Cursos */
 
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: auto;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #f3723b;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: #ff510052;
+    width: 250px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.detalhes-btn {
+    background-color: #C38B8B;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.detalhes-btn:hover {
+    background-color: #f3723b;
+    color: #000;
+}
+
+.btn-success {
+    background-color: #C38B8B;
+    color: #000;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #000;
+    color: #AF6565;
+}
+
+
+
+
+/* Estilo do modal */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
+  
+ 
+  .modal-content {
+    background-color: #AF6565;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+  .modal-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+ 
+  .modal-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #f3723b;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .modal-btn:hover {
+    background-color: #C38B8B;
+    color: #000;
+  }
+
+
+/* Comunidade do WhatsApp */
+
+.convite-container {
+    margin: 100px auto;
+    background: #C38B8B;
+    border: 1px solid #f3723b;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+}
+
+.convite-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.convite-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.convite-container button {
+    background-color: #f3723b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.convite-container button:hover {
+    background-color: #000;
+    color: #AF6565;
+}
+
+.convite-container img {
+    width: 100px;
+    margin-bottom: 20px;
+}
 
 
 
@@ -428,9 +765,18 @@ footer {
 
     /* Responsividade para smartphones (telas menores que 480px) */
 
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box; 
+    }
+
     /* Carrossel */
 
-  .carousel-item {
+   .carousel-item {
         height: 300px; 
     }
 
@@ -446,6 +792,16 @@ footer {
         font-size: 0.7rem; 
     }
 
+    /* Cursos */
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-success {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
 
     /* Aceitar Cookies */
 
@@ -476,6 +832,15 @@ footer {
 
     /* Esconde o menu desktop e mostra o menu mobile em telas pequenas */
 
+    body{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    *{
+        box-sizing: border-box; 
+    }
+
     /*Navegação Mobile*/
 
     .nav {
@@ -492,7 +857,7 @@ footer {
 
     /* Carrossel */
 
-   .carousel-item {
+    .carousel-item {
         height: 400px; 
     }
 
@@ -511,6 +876,16 @@ footer {
 
     .carousel-buttons button {
         padding: 8px 15px; 
+    }
+
+    /* Cursos */
+
+    .card {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
     }
 
     /* Aceitar Cookies */
@@ -536,5 +911,3 @@ footer {
     }
 
 }
-
-

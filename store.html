@@ -97,16 +97,45 @@
         </div>
     </div>
 
+    <!-- Cursos -->
+     
+    <div class="container">
+        <h1>Produtos Disponíveis</h1>
 
+        <!-- Barra de pesquisa -->
 
+        <div id="search-container">
+            <input type="text" id="search" placeholder="Pesquise produtos..." onkeyup="pesquisarProdutos()">
+        </div>
+        
+        <div id="resultados"></div>
+        <!-- Categorias -->
+        <div id="categorias" class="categorias-container"></div>       
 
+        <div id="produtos" class="row">
+            <!-- Os produtos serão carregados aqui -->
+        </div>
+    </div>
 
+    <!-- Modal -->
+     
+    <div id="produtoModal" class="modal">
+        <div class="modal-content">
+          <span class="modal-close" id="modalClose">&times;</span>
+          <img id="modalImagem" src="" alt="Imagem do Produto" class="modal-img">
+          <h2 id="modalNome"></h2>
+          <p id="modalDescricao"></p>
+          <p><strong>Preço: R$ <span id="modalPreco"></span></strong></p>
+          <a id="modalLinkCompra" href="#" target="_blank" class="modal-btn">Comprar</a>
+        </div>
+    </div>
 
-
-
-
-
-
+    <div class="convite-container">
+        <img src="img/whatsapp-store.png" alt="WhatsApp Logo">
+        <h1>Precisa de suporte?</h1>
+        <p>Clique no botão abaixo para conversar com nosso consultor de vendas especializado!</p>
+        <a href="https://wa.me/556281913249"><button>Falar com nosso atendente</button></a>
+    </div>
 
     <div class="cookies-msg" id="cookies-msg" role="alert" aria-live="polite">
         <div class="cookies-txt">
@@ -141,5 +170,9 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Chamar a função para carregar produtos ao abrir a página
+        document.addEventListener('DOMContentLoaded', carregarProdutos);
+    </script>
 </body>
 </html>
