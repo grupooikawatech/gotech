@@ -1,5 +1,6 @@
 // URL do script PHP que lista as categorias
 const URL_LISTAR_CATEGORIAS = "https://fenixreborn.com.br/listar_categorias.php";
+const URL_LISTAR_CATEGORIAS_STORE = "https://fenixreborn.com.br/listar_categorias_store.php";
 
 /* Apenas Mobile! */
 
@@ -247,7 +248,7 @@ async function carregarCategorias() {
 async function carregarCategoriasStore() {
     try {
         // Faz a requisição ao script PHP
-        const response = await fetch(URL_LISTAR_CATEGORIAS);
+        const response = await fetch(URL_LISTAR_CATEGORIAS_STORE);
         
         // Verifica se a resposta é bem-sucedida
         if (!response.ok) {
