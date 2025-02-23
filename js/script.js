@@ -152,6 +152,7 @@ function scrollToSection(event) {
             `;
             resultadosDiv.appendChild(cursoDiv);
         });
+        //dayzinha linda do meu coração <3 
 
         if (cursos.length === 0) {
             resultadosDiv.innerHTML = '<p>Nenhum curso encontrado.</p>';
