@@ -404,17 +404,21 @@ header .logo img {
     transform: scale(0.98); /* Diminui o tamanho do botão ao clicar */
 }
 
-/*Categorias*/
-
+/* Categorias */
 .categorias-container {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-    height: 20vh; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 20vh; /* Garante que as categorias ocupem um espaço mínimo */
+    margin-bottom: 30px; /* Espaço entre categorias e produtos */
+    padding: 10px; /* Preenchimento interno */
+    background-color: #f3723b48; /* Cor de fundo suave para destacar */
+    border-bottom: 2px solid #f3723b; /* Linha de separação com a cor do tema */
 }
 
+/* Botão das categorias */
 .categoria-botao {
     padding: 10px 20px;
     font-size: 16px;
@@ -430,17 +434,14 @@ header .logo img {
 }
 
 .categoria-botao:hover {
-    background-color: #AF6565;
+    background-color: #af6565;
     transform: scale(1.05);
 }
 
 .categoria-botao:active {
-    background-color: #C38B8B;
+    background-color: #c38b8b;
     transform: scale(0.95);
 }
-
-
-
 
 
 /* Cursos */

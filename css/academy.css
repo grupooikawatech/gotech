@@ -410,17 +410,21 @@ h1 {
     transform: scale(0.98); /* Diminui o tamanho do botão ao clicar */
 }
 
-/*Categorias*/
-
+/* Categorias */
 .categorias-container {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-    height: 20vh; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 20vh; /* Garante que a altura mínima seja respeitada */
+    margin-bottom: 30px; /* Espaço entre categorias e produtos */
+    padding: 10px; /* Adiciona um pequeno preenchimento interno */
+    background-color: #61987070; /* Adiciona uma cor de fundo para destacar */
+    border-bottom: 2px solid #ccc; /* Linha para separar visualmente */
 }
 
+/* Botão das categorias */
 .categoria-botao {
     padding: 10px 20px;
     font-size: 16px;
@@ -444,9 +448,6 @@ h1 {
     background-color: #c7dc4f;
     transform: scale(0.95);
 }
-
-
-
 
 
 /* Cursos */
