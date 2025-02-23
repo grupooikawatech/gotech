@@ -318,7 +318,7 @@ async function carregarProdutos(pagina = 1, categoriaId = 1) {
                         <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                             Ver detalhes
                         </button>
-                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
+                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Matrícula</a>
                     </div>
                 </div>
             `;
