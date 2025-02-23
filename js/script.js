@@ -483,9 +483,9 @@ async function mostrarDetalhes(id) {
     }
 }
 
-/* Conexão do Back-End com a página Academy */
+/* Conexão do Back-End com a página Store */
 
-async function carregarProdutos(pagina = 1) {
+async function carregarProdutosStore(pagina = 1) {
     try {
         const limite = 20; // Quantidade de produtos por página
         const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?pagina=${pagina}&limite=${limite}`);
