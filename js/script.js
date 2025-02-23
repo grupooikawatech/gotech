@@ -264,7 +264,7 @@ function exibirCategorias(categorias) {
 
         // Adiciona evento de clique para filtrar produtos pela categoria
         categoriaItem.addEventListener("click", () => {
-            filtrarProdutosPorCategoria(categoria.id);
+            carregarProdutos(1, categoria.id);
         });
 
         categoriasContainer.appendChild(categoriaItem);
@@ -288,113 +288,19 @@ function exibirCategoriasStore(categorias) {
 
         // Adiciona evento de clique para filtrar produtos pela categoria
         categoriaItem.addEventListener("click", () => {
-            filtrarProdutosPorCategoriaStore(categoria.id);
+            carregarProdutosStore(1, categoria.id);
         });
 
         categoriasContainer.appendChild(categoriaItem);
     });
 }
 
-// Função para carregar os produtos filtrados pela categoria
-async function filtrarProdutosPorCategoria(categoriaId) {
-    try {
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?categoria_id=${categoriaId}`);
-        if (!response.ok) {
-            throw new Error(`Erro HTTP: ${response.status}`);
-        }
-        const produtos = await response.json();
-        console.log("Produtos filtrados:", produtos);
-        exibirProdutos(produtos); // Função que exibe os produtos na tela
-    } catch (error) {
-        console.error("Erro ao filtrar produtos:", error.message);
-    }
-}
-
-// Função para carregar os produtos filtrados pela categoria
-async function filtrarProdutosPorCategoriaStore(categoriaId) {
-    try {
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?categoria_id=${categoriaId}`);
-        if (!response.ok) {
-            throw new Error(`Erro HTTP: ${response.status}`);
-        }
-        const produtos = await response.json();
-        console.log("Produtos filtrados:", produtos);
-        exibirProdutosStore(produtos); // Função que exibe os produtos na tela
-    } catch (error) {
-        console.error("Erro ao filtrar produtos:", error.message);
-    }
-}
-
-// Função para exibir produtos na tela
-function exibirProdutos(produtos) {
-    const container = document.getElementById("produtos");
-    if (!container) {
-        console.error("Elemento de produtos não encontrado!");
-        return;
-    }
-
-    // Limpar conteúdo existente
-    container.innerHTML = "";
-
-    // Adicionar produtos
-    produtos.forEach((produto) => {
-        const card = document.createElement('div');
-        card.classList.add('col-md-4', 'mb-4');
-        card.innerHTML = `
-            <div class="card">
-                <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                    <h5 class="card-title">${produto.nome}</h5>
-                    <p class="card-text">Preço: R$ ${produto.preco}</p>
-                    <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
-                        Ver detalhes
-                    </button>
-                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Matrícula</a>
-                </div>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-}
-
-// Função para exibir produtos na tela do Store
-function exibirProdutosStore(produtos) {
-    const container = document.getElementById("produtos");
-    if (!container) {
-        console.error("Elemento de produtos não encontrado!");
-        return;
-    }
-
-    // Limpar conteúdo existente
-    container.innerHTML = "";
-
-    // Adicionar produtos
-    produtos.forEach((produto) => {
-        const card = document.createElement('div');
-        card.classList.add('col-md-4', 'mb-4');
-        card.innerHTML = `
-            <div class="card">
-                <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                    <h5 class="card-title">${produto.nome}</h5>
-                    <p class="card-text">Preço: R$ ${produto.preco}</p>
-                    <button onclick="mostrarDetalhesStore(${produto.id})" class="detalhes-btn">
-                        Ver detalhes
-                    </button>
-                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
-                </div>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-}
-
 /* Conexão do Back-End com a página Academy */
 
-async function carregarProdutos(pagina = 1) {
+async function carregarProdutos(pagina = 1, categoriaId = 1) {
     try {
         const limite = 20; // Quantidade de produtos por página
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?pagina=${pagina}&limite=${limite}`);
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?pagina=${pagina}&limite=${limite}&categoria_id=${categoriaId}`);
         const { produtos, totalPaginas } = await response.json();
 
         const container = document.getElementById('produtos');
@@ -490,10 +396,10 @@ async function mostrarDetalhes(id) {
 
 /* Conexão do Back-End com a página Store */
 
-async function carregarProdutosStore(pagina = 1) {
+async function carregarProdutosStore(pagina = 1, categoriaId = 1) {
     try {
         const limite = 20; // Quantidade de produtos por página
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?pagina=${pagina}&limite=${limite}`);
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?pagina=${pagina}&limite=${limite}&categoria_id=${categoriaId}`);
         const { produtos, totalPaginas } = await response.json();
 
         const container = document.getElementById('produtos');
