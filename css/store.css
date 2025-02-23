@@ -548,53 +548,99 @@ h1 {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8); 
-  }
-  
- 
-  .modal-content {
-    background-color: #f3723b;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-  }
-  
+}
 
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
 
-  .modal-img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-  
- 
-  .modal-btn {
-    display: inline-block;
-    margin-top: 15px;
+.modal-content {
+background-color: #f3723b;
+margin: 10% auto;
+padding: 20px;
+border-radius: 8px;
+width: 80%;
+max-width: 500px;
+text-align: center;
+}
+
+
+.modal-close {
+position: absolute;
+top: 10px;
+right: 20px;
+font-size: 24px;
+font-weight: bold;
+cursor: pointer;
+}
+
+
+.modal-img {
+width: 100%;
+max-height: 200px;
+object-fit: cover;
+margin-bottom: 15px;
+}
+
+
+.modal-btn {
+display: inline-block;
+margin-top: 15px;
+padding: 10px 20px;
+background-color: #ff3c006b;
+color: #000;
+text-decoration: none;
+border-radius: 5px;
+font-size: 16px;
+}
+
+.modal-btn:hover {
+background-color: rgba(243, 114, 59, 0.678);
+color: #000;
+}
+
+#paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#paginacao button {
     padding: 10px 20px;
-    background-color: #ff3c006b;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
     font-size: 16px;
-  }
-  
-  .modal-btn:hover {
-    background-color: rgba(243, 114, 59, 0.678);
-    color: #000;
-  }
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#paginacao button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#paginacao button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#paginacao input {
+    width: 50px;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+#paginacao input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 
 
 /* Comunidade do WhatsApp */

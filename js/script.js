@@ -393,14 +393,13 @@ function exibirProdutosStore(produtos) {
 
 async function carregarProdutos(pagina = 1) {
     try {
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?pagina=${pagina}`);
-        const produtos = await response.json();
+        const limite = 20; // Quantidade de produtos por página
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?pagina=${pagina}&limite=${limite}`);
+        const { produtos, totalPaginas } = await response.json();
+
         const container = document.getElementById('produtos');
+        container.innerHTML = ''; // Limpar os produtos antes de carregar novos
 
-        // Limpar os produtos atuais
-        container.innerHTML = '';
-
-        // Renderizar os produtos da página
         produtos.forEach(produto => {
             const card = document.createElement('div');
             card.classList.add('col-md-4', 'mb-4');
@@ -413,7 +412,7 @@ async function carregarProdutos(pagina = 1) {
                         <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                             Ver detalhes
                         </button>
-                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Matrícula</a>
+                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
                     </div>
                 </div>
             `;
@@ -421,30 +420,46 @@ async function carregarProdutos(pagina = 1) {
         });
 
         // Atualizar paginação
-        atualizarPaginacao(pagina);
+        atualizarPaginacao(pagina, totalPaginas);
     } catch (erro) {
         console.error('Erro ao carregar produtos:', erro);
     }
 }
 
-function atualizarPaginacao(pagina) {
+function atualizarPaginacao(paginaAtual, totalPaginas) {
     const paginacaoContainer = document.getElementById('paginacao');
     paginacaoContainer.innerHTML = '';
 
     // Botão "Anterior"
-    if (pagina > 1) {
-        const btnAnterior = document.createElement('button');
-        btnAnterior.textContent = 'Anterior';
-        btnAnterior.classList.add('btn', 'btn-primary', 'me-2');
-        btnAnterior.onclick = () => carregarProdutos(pagina - 1);
-        paginacaoContainer.appendChild(btnAnterior);
-    }
+    const btnAnterior = document.createElement('button');
+    btnAnterior.textContent = 'Anterior';
+    btnAnterior.classList.add('btn', 'btn-primary');
+    btnAnterior.disabled = paginaAtual === 1; // Desabilita se for a primeira página
+    btnAnterior.onclick = () => carregarProdutos(paginaAtual - 1);
+    paginacaoContainer.appendChild(btnAnterior);
+
+    // Campo de entrada para digitar o número da página
+    const inputPagina = document.createElement('input');
+    inputPagina.type = 'number';
+    inputPagina.min = 1;
+    inputPagina.max = totalPaginas; // Limite para o total de páginas
+    inputPagina.value = paginaAtual;
+    inputPagina.onchange = () => {
+        const numeroPagina = parseInt(inputPagina.value);
+        if (!isNaN(numeroPagina) && numeroPagina >= 1 && numeroPagina <= totalPaginas) {
+            carregarProdutos(numeroPagina);
+        } else {
+            inputPagina.value = paginaAtual; // Resetar para a página atual se inválido
+        }
+    };
+    paginacaoContainer.appendChild(inputPagina);
 
     // Botão "Próximo"
     const btnProximo = document.createElement('button');
     btnProximo.textContent = 'Próximo';
     btnProximo.classList.add('btn', 'btn-primary');
-    btnProximo.onclick = () => carregarProdutos(pagina + 1);
+    btnProximo.disabled = paginaAtual === totalPaginas; // Desabilita se for a última página
+    btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
     paginacaoContainer.appendChild(btnProximo);
 }
 
@@ -468,16 +483,17 @@ async function mostrarDetalhes(id) {
     }
 }
 
-async function carregarProdutosStore(pagina = 1) {
+/* Conexão do Back-End com a página Academy */
+
+async function carregarProdutos(pagina = 1) {
     try {
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?pagina=${pagina}`);
-        const produtos = await response.json();
+        const limite = 20; // Quantidade de produtos por página
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?pagina=${pagina}&limite=${limite}`);
+        const { produtos, totalPaginas } = await response.json();
+
         const container = document.getElementById('produtos');
+        container.innerHTML = ''; // Limpar os produtos antes de carregar novos
 
-        // Limpar os produtos atuais
-        container.innerHTML = '';
-
-        // Renderizar os produtos da página atual
         produtos.forEach(produto => {
             const card = document.createElement('div');
             card.classList.add('col-md-4', 'mb-4');
@@ -497,31 +513,47 @@ async function carregarProdutosStore(pagina = 1) {
             container.appendChild(card);
         });
 
-        // Atualizar a navegação de paginação
-        atualizarPaginacaoStore(pagina);
+        // Atualizar paginação
+        atualizarPaginacao(pagina, totalPaginas);
     } catch (erro) {
         console.error('Erro ao carregar produtos:', erro);
     }
 }
 
-function atualizarPaginacaoStore(pagina) {
+function atualizarPaginacaoStore(paginaAtual, totalPaginas) {
     const paginacaoContainer = document.getElementById('paginacao');
     paginacaoContainer.innerHTML = '';
 
     // Botão "Anterior"
-    if (pagina > 1) {
-        const btnAnterior = document.createElement('button');
-        btnAnterior.textContent = 'Anterior';
-        btnAnterior.classList.add('btn', 'btn-primary', 'me-2');
-        btnAnterior.onclick = () => carregarProdutosStore(pagina - 1);
-        paginacaoContainer.appendChild(btnAnterior);
-    }
+    const btnAnterior = document.createElement('button');
+    btnAnterior.textContent = 'Anterior';
+    btnAnterior.classList.add('btn', 'btn-primary');
+    btnAnterior.disabled = paginaAtual === 1; // Desabilita se for a primeira página
+    btnAnterior.onclick = () => carregarProdutos(paginaAtual - 1);
+    paginacaoContainer.appendChild(btnAnterior);
+
+    // Campo de entrada para digitar o número da página
+    const inputPagina = document.createElement('input');
+    inputPagina.type = 'number';
+    inputPagina.min = 1;
+    inputPagina.max = totalPaginas; // Limite para o total de páginas
+    inputPagina.value = paginaAtual;
+    inputPagina.onchange = () => {
+        const numeroPagina = parseInt(inputPagina.value);
+        if (!isNaN(numeroPagina) && numeroPagina >= 1 && numeroPagina <= totalPaginas) {
+            carregarProdutos(numeroPagina);
+        } else {
+            inputPagina.value = paginaAtual; // Resetar para a página atual se inválido
+        }
+    };
+    paginacaoContainer.appendChild(inputPagina);
 
     // Botão "Próximo"
     const btnProximo = document.createElement('button');
     btnProximo.textContent = 'Próximo';
     btnProximo.classList.add('btn', 'btn-primary');
-    btnProximo.onclick = () => carregarProdutosStore(pagina + 1);
+    btnProximo.disabled = paginaAtual === totalPaginas; // Desabilita se for a última página
+    btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
     paginacaoContainer.appendChild(btnProximo);
 }
 
