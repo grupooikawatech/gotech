@@ -507,3 +507,12 @@ window.addEventListener('click', (event) => {
         modal.style.display = 'none';
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const imagens = document.querySelectorAll("img");
+
+    imagens.forEach((img) => {
+        const urlOriginal = img.src;
+        img.src = `${urlOriginal}?v=${new Date().getTime()}`;
+    });
+});
