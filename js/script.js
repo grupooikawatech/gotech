@@ -364,7 +364,7 @@ function atualizarPaginacao(paginaAtual, totalPaginas) {
     const btnProximo = document.createElement('button');
     btnProximo.textContent = 'Próximo';
     btnProximo.classList.add('btn', 'btn-primary');
-    btnProximo.disabled = paginaAtual === totalPaginas; // Desabilita se for a última página
+    btnProximo.disabled = paginaAtual === totalPaginas || totalPaginas === 0; // Desabilita se for a última página
     btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
     paginacaoContainer.appendChild(btnProximo);
 
@@ -463,7 +463,7 @@ function atualizarPaginacaoStore(paginaAtual, totalPaginas) {
     const btnProximo = document.createElement('button');
     btnProximo.textContent = 'Próximo';
     btnProximo.classList.add('btn', 'btn-primary');
-    btnProximo.disabled = paginaAtual === totalPaginas; // Desabilita se for a última página
+    btnProximo.disabled = paginaAtual === totalPaginas || totalPaginas === 0; // Desabilita se for a última página
     btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
     paginacaoContainer.appendChild(btnProximo);
 
