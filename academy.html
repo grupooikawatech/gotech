@@ -138,6 +138,10 @@
             <div id="produtos" class="row">
                 <!-- Os produtos serão carregados aqui -->
             </div>
+
+            <div id="paginacao" class="d-flex justify-content-center mt-4">
+                <!-- Botões de paginação serão renderizados aqui -->
+            </div>
         </div>
 
         <!-- Modal -->
@@ -185,10 +189,10 @@
         </footer>
     </main>
 
-    <script src="js/script.js?v=1.0.4"></script>
+    <script src="js/script.js?v=1.0.5"></script>
     <script>
         // Chamar a função para carregar produtos ao abrir a página
-        document.addEventListener('DOMContentLoaded', carregarProdutos);
+        document.addEventListener('DOMContentLoaded', carregarProdutos(1));
         document.addEventListener("DOMContentLoaded", carregarCategorias);
     </script>
 </body>

@@ -391,12 +391,16 @@ function exibirProdutosStore(produtos) {
 
 /* Conexão do Back-End com a página Academy */
 
-async function carregarProdutos() {
+async function carregarProdutos(pagina = 1) {
     try {
-        const response = await fetch('https://fenixreborn.com.br/listar_produtos.php');
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?pagina=${pagina}`);
         const produtos = await response.json();
         const container = document.getElementById('produtos');
 
+        // Limpar os produtos atuais
+        container.innerHTML = '';
+
+        // Renderizar os produtos da página
         produtos.forEach(produto => {
             const card = document.createElement('div');
             card.classList.add('col-md-4', 'mb-4');
@@ -415,9 +419,33 @@ async function carregarProdutos() {
             `;
             container.appendChild(card);
         });
+
+        // Atualizar paginação
+        atualizarPaginacao(pagina);
     } catch (erro) {
         console.error('Erro ao carregar produtos:', erro);
     }
+}
+
+function atualizarPaginacao(pagina) {
+    const paginacaoContainer = document.getElementById('paginacao');
+    paginacaoContainer.innerHTML = '';
+
+    // Botão "Anterior"
+    if (pagina > 1) {
+        const btnAnterior = document.createElement('button');
+        btnAnterior.textContent = 'Anterior';
+        btnAnterior.classList.add('btn', 'btn-primary', 'me-2');
+        btnAnterior.onclick = () => carregarProdutos(pagina - 1);
+        paginacaoContainer.appendChild(btnAnterior);
+    }
+
+    // Botão "Próximo"
+    const btnProximo = document.createElement('button');
+    btnProximo.textContent = 'Próximo';
+    btnProximo.classList.add('btn', 'btn-primary');
+    btnProximo.onclick = () => carregarProdutos(pagina + 1);
+    paginacaoContainer.appendChild(btnProximo);
 }
 
 async function mostrarDetalhes(id) {
@@ -440,14 +468,16 @@ async function mostrarDetalhes(id) {
     }
 }
 
-/* Conexão do Back-End com a página Store */
-
-async function carregarProdutosStore() {
+async function carregarProdutosStore(pagina = 1) {
     try {
-        const response = await fetch('https://fenixreborn.com.br/listar_produtos_store.php');
+        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?pagina=${pagina}`);
         const produtos = await response.json();
         const container = document.getElementById('produtos');
 
+        // Limpar os produtos atuais
+        container.innerHTML = '';
+
+        // Renderizar os produtos da página atual
         produtos.forEach(produto => {
             const card = document.createElement('div');
             card.classList.add('col-md-4', 'mb-4');
@@ -466,9 +496,33 @@ async function carregarProdutosStore() {
             `;
             container.appendChild(card);
         });
+
+        // Atualizar a navegação de paginação
+        atualizarPaginacaoStore(pagina);
     } catch (erro) {
         console.error('Erro ao carregar produtos:', erro);
     }
+}
+
+function atualizarPaginacaoStore(pagina) {
+    const paginacaoContainer = document.getElementById('paginacao');
+    paginacaoContainer.innerHTML = '';
+
+    // Botão "Anterior"
+    if (pagina > 1) {
+        const btnAnterior = document.createElement('button');
+        btnAnterior.textContent = 'Anterior';
+        btnAnterior.classList.add('btn', 'btn-primary', 'me-2');
+        btnAnterior.onclick = () => carregarProdutosStore(pagina - 1);
+        paginacaoContainer.appendChild(btnAnterior);
+    }
+
+    // Botão "Próximo"
+    const btnProximo = document.createElement('button');
+    btnProximo.textContent = 'Próximo';
+    btnProximo.classList.add('btn', 'btn-primary');
+    btnProximo.onclick = () => carregarProdutosStore(pagina + 1);
+    paginacaoContainer.appendChild(btnProximo);
 }
 
 async function mostrarDetalhesStore(id) {

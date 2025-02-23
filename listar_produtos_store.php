@@ -10,20 +10,24 @@ if ($conn->connect_error) {
     exit;
 }
 
-// Verificar o valor de categoria_id
+// Verificar os parâmetros de categoria e paginação
 $categoria_id = isset($_GET['categoria_id']) ? intval($_GET['categoria_id']) : null;
+$pagina = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
+$limite = 20; // Número de itens por página
+$offset = ($pagina - 1) * $limite; // Cálculo do offset
 
 // Montar a consulta SQL
 $sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM store";
-
-// Se categoria_id for diferente de 1 (Geral), filtra os produtos pela categoria
 if ($categoria_id && $categoria_id !== 1) {
     $sql .= " WHERE categoria_id = $categoria_id";
 }
+$sql .= " LIMIT $limite OFFSET $offset"; // Adiciona limite e offset para paginação
 
 $result = $conn->query($sql);
 if (!$result) {
-    die("Erro na consulta: " . $conn->error);
+    http_response_code(500);
+    echo json_encode(["erro" => "Erro na consulta: " . $conn->error]);
+    exit;
 }
 
 $produtos = [];
