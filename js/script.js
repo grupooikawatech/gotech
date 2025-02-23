@@ -148,7 +148,7 @@ function scrollToSection(event) {
                 <h3>${curso.nome}</h3>
                 <p>${curso.descricao}</p>
                 <p><strong>Preço: R$ ${parseFloat(curso.preco).toFixed(2)}</strong></p>
-                <a href="${curso.link_compra}" target="_blank" class="btn-comprar">Comprar</a>
+                <a href="${curso.link_compra}" target="_blank" class="btn-comprar">Quero me matricular!</a>
             `;
             resultadosDiv.appendChild(cursoDiv);
         });
@@ -349,7 +349,7 @@ function exibirProdutos(produtos) {
                     <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                         Ver detalhes
                     </button>
-                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
+                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Quero me matricular!</a>
                 </div>
             </div>
         `;
@@ -409,7 +409,7 @@ async function carregarProdutos() {
                         <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                             Ver detalhes
                         </button>
-                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Comprar</a>
+                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Quero me matrícular!</a>
                     </div>
                 </div>
             `;
