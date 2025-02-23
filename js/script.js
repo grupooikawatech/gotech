@@ -349,7 +349,7 @@ function exibirProdutos(produtos) {
                     <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                         Ver detalhes
                     </button>
-                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Quero me matricular!</a>
+                    <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Matrícula</a>
                 </div>
             </div>
         `;
@@ -409,7 +409,7 @@ async function carregarProdutos() {
                         <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                             Ver detalhes
                         </button>
-                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Quero me matrícular!</a>
+                        <a href="${produto.link_compra}" target="_blank" class="btn btn-success mt-2">Matrícula</a>
                     </div>
                 </div>
             `;
