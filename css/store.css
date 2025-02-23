@@ -609,7 +609,7 @@ color: #000;
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background-color: #007bff;
+    background-color: #ff5e00;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -617,7 +617,7 @@ color: #000;
 }
 
 #paginacao button:hover {
-    background-color: #0056b3;
+    background-color: #f3723b;
     transform: scale(1.05);
 }
 
@@ -637,7 +637,7 @@ color: #000;
 }
 
 #paginacao input:focus {
-    border-color: #007bff;
+    border-color: #AF6565;
     outline: none;
 }
 

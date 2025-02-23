@@ -461,6 +461,11 @@ function atualizarPaginacao(paginaAtual, totalPaginas) {
     btnProximo.disabled = paginaAtual === totalPaginas; // Desabilita se for a última página
     btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
     paginacaoContainer.appendChild(btnProximo);
+
+    // Exibir mensagem "Página X de Y"
+    const paginaInfo = document.createElement('p');
+    paginaInfo.textContent = `Página ${paginaAtual} de ${totalPaginas}`;
+    paginacaoContainer.appendChild(paginaInfo);
 }
 
 async function mostrarDetalhes(id) {
@@ -514,7 +519,7 @@ async function carregarProdutosStore(pagina = 1) {
         });
 
         // Atualizar paginação
-        atualizarPaginacao(pagina, totalPaginas);
+        atualizarPaginacaoStore(pagina, totalPaginas);
     } catch (erro) {
         console.error('Erro ao carregar produtos:', erro);
     }
@@ -555,6 +560,11 @@ function atualizarPaginacaoStore(paginaAtual, totalPaginas) {
     btnProximo.disabled = paginaAtual === totalPaginas; // Desabilita se for a última página
     btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
     paginacaoContainer.appendChild(btnProximo);
+
+    // Exibir mensagem "Página X de Y"
+    const paginaInfo = document.createElement('p');
+    paginaInfo.textContent = `Página ${paginaAtual} de ${totalPaginas}`;
+    paginacaoContainer.appendChild(paginaInfo);
 }
 
 async function mostrarDetalhesStore(id) {
