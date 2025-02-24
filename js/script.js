@@ -123,7 +123,7 @@ function scrollToSection(event) {
 
 /* Barra de pesquisa do Academy */
 
- async function pesquisarCursos() {
+async function pesquisarCursos() {
     const termo = document.getElementById('search').value;
 
     // Evita busca se a barra estiver vazia
@@ -152,7 +152,7 @@ function scrollToSection(event) {
             `;
             resultadosDiv.appendChild(cursoDiv);
         });
-        //dayzinha linda do meu coração <3 
+        console.log('dayzinha linda do meu coração <3'); 
 
         if (cursos.length === 0) {
             resultadosDiv.innerHTML = '<p>Nenhum curso encontrado.</p>';
