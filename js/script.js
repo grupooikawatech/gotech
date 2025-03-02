@@ -147,7 +147,6 @@ async function pesquisarCursos() {
             cursoDiv.innerHTML = `
                 <h3>${curso.nome}</h3>
                 <p>${curso.descricao}</p>
-                <p><strong>Preço: R$ ${parseFloat(curso.preco).toFixed(2)}</strong></p>
                 <a href="${curso.link_compra}" target="_blank" class="btn-comprar">Quero me matricular!</a>
             `;
             resultadosDiv.appendChild(cursoDiv);
@@ -315,7 +314,6 @@ async function carregarProdutos(pagina = 1, categoriaId = 1) {
                     <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title">${produto.nome}</h5>
-                        <p class="card-text">Preço: R$ ${produto.preco}</p>
                         <button onclick="mostrarDetalhes(${produto.id})" class="detalhes-btn">
                             Ver detalhes
                         </button>
@@ -385,7 +383,6 @@ async function mostrarDetalhes(id) {
         document.getElementById('modalImagem').src = produto.imagem || 'default.jpg';
         document.getElementById('modalNome').textContent = produto.nome;
         document.getElementById('modalDescricao').textContent = produto.descricao;
-        document.getElementById('modalPreco').textContent = produto.preco;
         document.getElementById('modalLinkCompra').href = produto.link_compra || '#';
 
         // Exibe o modal

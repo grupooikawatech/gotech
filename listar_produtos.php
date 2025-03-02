@@ -33,7 +33,7 @@ $totalProdutos = $resultTotal->fetch_assoc()['total'];
 $totalPaginas = ceil($totalProdutos / $limite); // Cálculo do total de páginas
 
 // Montar a consulta SQL para buscar os produtos
-$sql = "SELECT id, nome, descricao, preco, imagem, link_compra FROM academy";
+$sql = "SELECT id, nome, descricao, imagem, link_compra FROM academy";
 if ($categoria_id && $categoria_id !== 1) {
     $sql .= " WHERE categoria_id = $categoria_id";
 }
