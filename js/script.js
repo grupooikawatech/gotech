@@ -325,13 +325,13 @@ async function carregarProdutos(pagina = 1, categoriaId = 1) {
         });
 
         // Atualizar paginação
-        atualizarPaginacao(pagina, totalPaginas);
+        atualizarPaginacao(pagina, totalPaginas, categoriaId);
     } catch (erro) {
         console.error('Erro ao carregar produtos:', erro);
     }
 }
 
-function atualizarPaginacao(paginaAtual, totalPaginas) {
+function atualizarPaginacao(paginaAtual, totalPaginas, categoriaId = 1) {
     const paginacaoContainer = document.getElementById('paginacao');
     paginacaoContainer.innerHTML = '';
 
@@ -340,7 +340,7 @@ function atualizarPaginacao(paginaAtual, totalPaginas) {
     btnAnterior.textContent = 'Anterior';
     btnAnterior.classList.add('btn', 'btn-primary');
     btnAnterior.disabled = paginaAtual === 1; // Desabilita se for a primeira página
-    btnAnterior.onclick = () => carregarProdutos(paginaAtual - 1);
+    btnAnterior.onclick = () => carregarProdutos(paginaAtual - 1, categoriaId);
     paginacaoContainer.appendChild(btnAnterior);
 
     // Campo de entrada para digitar o número da página
@@ -352,7 +352,7 @@ function atualizarPaginacao(paginaAtual, totalPaginas) {
     inputPagina.onchange = () => {
         const numeroPagina = parseInt(inputPagina.value);
         if (!isNaN(numeroPagina) && numeroPagina >= 1 && numeroPagina <= totalPaginas) {
-            carregarProdutos(numeroPagina);
+            carregarProdutos(numeroPagina, categoriaId);
         } else {
             inputPagina.value = paginaAtual; // Resetar para a página atual se inválido
         }
@@ -364,7 +364,7 @@ function atualizarPaginacao(paginaAtual, totalPaginas) {
     btnProximo.textContent = 'Próximo';
     btnProximo.classList.add('btn', 'btn-primary');
     btnProximo.disabled = paginaAtual === totalPaginas || totalPaginas === 0; // Desabilita se for a última página
-    btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
+    btnProximo.onclick = () => carregarProdutos(paginaAtual + 1, categoriaId);
     paginacaoContainer.appendChild(btnProximo);
 
     // Exibir mensagem "Página X de Y"
@@ -423,13 +423,13 @@ async function carregarProdutosStore(pagina = 1, categoriaId = 1) {
         });
 
         // Atualizar paginação
-        atualizarPaginacaoStore(pagina, totalPaginas);
+        atualizarPaginacaoStore(pagina, totalPaginas, categoriaId);
     } catch (erro) {
         console.error('Erro ao carregar produtos:', erro);
     }
 }
 
-function atualizarPaginacaoStore(paginaAtual, totalPaginas) {
+function atualizarPaginacaoStore(paginaAtual, totalPaginas, categoriaId) {
     const paginacaoContainer = document.getElementById('paginacao');
     paginacaoContainer.innerHTML = '';
 
@@ -438,7 +438,7 @@ function atualizarPaginacaoStore(paginaAtual, totalPaginas) {
     btnAnterior.textContent = 'Anterior';
     btnAnterior.classList.add('btn', 'btn-primary');
     btnAnterior.disabled = paginaAtual === 1; // Desabilita se for a primeira página
-    btnAnterior.onclick = () => carregarProdutos(paginaAtual - 1);
+    btnAnterior.onclick = () => carregarProdutos(paginaAtual - 1, categoriaId);
     paginacaoContainer.appendChild(btnAnterior);
 
     // Campo de entrada para digitar o número da página
@@ -450,7 +450,7 @@ function atualizarPaginacaoStore(paginaAtual, totalPaginas) {
     inputPagina.onchange = () => {
         const numeroPagina = parseInt(inputPagina.value);
         if (!isNaN(numeroPagina) && numeroPagina >= 1 && numeroPagina <= totalPaginas) {
-            carregarProdutos(numeroPagina);
+            carregarProdutos(numeroPagina, categoriaId);
         } else {
             inputPagina.value = paginaAtual; // Resetar para a página atual se inválido
         }
@@ -462,7 +462,7 @@ function atualizarPaginacaoStore(paginaAtual, totalPaginas) {
     btnProximo.textContent = 'Próximo';
     btnProximo.classList.add('btn', 'btn-primary');
     btnProximo.disabled = paginaAtual === totalPaginas || totalPaginas === 0; // Desabilita se for a última página
-    btnProximo.onclick = () => carregarProdutos(paginaAtual + 1);
+    btnProximo.onclick = () => carregarProdutos(paginaAtual + 1, categoriaId);
     paginacaoContainer.appendChild(btnProximo);
 
     // Exibir mensagem "Página X de Y"
