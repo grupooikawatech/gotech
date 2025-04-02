@@ -9,7 +9,7 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       devShells.x86_64-linux.default = pkgs.mkShell {
-        buildInputs = with pkgs; [ nodejs ];
+        buildInputs = with pkgs; [ nodejs docker docker-compose ];
         shellHook = "";
       };
     };
