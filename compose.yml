@@ -5,5 +5,7 @@ services:
     image: host
     ports:
       - '3000:3000'
+    volumes:
+      - .:/app
     environment:
       NODE_ENV: development
