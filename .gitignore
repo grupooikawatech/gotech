@@ -1,0 +1,6 @@
+node_modules
+.direnv
+.next
+
+.envrc
+next-env.d.ts
