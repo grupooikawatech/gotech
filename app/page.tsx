@@ -1,6 +1,6 @@
-import Portifolio from "./components/portifolio"
-import AboutUs from "./components/aboutUs"
-import FormsAgendamento from "./components/formsAgendamento"
+import Portifolio from "./ui/portifolio"
+import AboutUs from "./ui/aboutUs"
+import FormsAgendamento from "./ui/formsAgendamento"
 
 export default function Home() {
   return (
