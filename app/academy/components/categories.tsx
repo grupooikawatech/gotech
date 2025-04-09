@@ -1,6 +1,6 @@
 'use client';
 
-import { Category } from "@/app/lib/db";
+import { Category } from "@/lib/db";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 export default function categoriesFilter(

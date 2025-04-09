@@ -1,6 +1,5 @@
-import { Course, fetchCourses, fetchFilteredCourses } from "@/app/lib/db";
+import { fetchFilteredCourses } from "@/lib/db";
 import Image from "next/image";
-import categoriesFilter from "./categories";
 
 export default async function CoursesGrid(
   { categoria: categoria }: { categoria: number }) {

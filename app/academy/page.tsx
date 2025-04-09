@@ -1,6 +1,6 @@
 import CoursesGrid from './components/grid'
 import CategoriesFilter from './components/categories'
-import { fetchCategorias, fetchCourses } from '../lib/db'
+import { fetchCategorias } from '@/lib/db'
 
 export default async function Academy(props: {
   searchParams?: Promise<{
