@@ -7,5 +7,32 @@ const sql = postgres({
   password: process.env.POSTGRES_PASSWORD,
 })
 
-export const getAcademyCourses = async () => await sql`SELECT * FROM academy`
+export type Course = {
+  id: number,
+  nome: string,
+  descricao: string,
+  imagem: string,
+  categoria_id: number,
+}
+
+export type Category = {
+  id: number,
+  nome: string,
+}
+
+export const fetchCourses =
+  async () => await sql<Course[]>`
+    SELECT * FROM academy`
+
+export const fetchCategorias =
+  async () => await sql<Category[]>`
+    SELECT * FROM categorias`
+
+export const fetchFilteredCourses =
+  async (categoria = 1, query = "") => await sql<Course[]>`
+    SELECT * 
+    FROM academy
+    WHERE 
+      nome ILIKE ${`%${query}%`} AND 
+      categoria_id = ${categoria}`
 
