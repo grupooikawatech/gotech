@@ -1,9 +1,14 @@
 import { fetchCourses } from "@/lib/db";
 import Image from "next/image";
 
-export default async function CoursesGrid(
-  { categoria: categoria }: { categoria: number }) {
-  const res = await fetchCourses(categoria)
+export default async function CoursesGrid({
+  categoria: categoria,
+  query: query
+}: {
+  categoria: number,
+  query: string
+}) {
+  const res = await fetchCourses(categoria, query)
   return (
     <div className='grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4'>
       {res.map((course) =>

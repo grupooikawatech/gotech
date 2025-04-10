@@ -22,18 +22,29 @@ export type Category = {
 
 export const fetchCourses =
   async (categoria = 1, query = "") => {
-    if (Number(categoria) === 1)
+    if (Number(categoria) === 1 && query === "")
       return await sql<Course[]>`
         SELECT * FROM academy`
 
-    return await sql<Course[]>`
+    if (Number(categoria) === 1) {
+      console.log(query)
+      return await sql<Course[]>`
       SELECT * 
       FROM academy
       WHERE 
-        nome ILIKE ${`%${query}%`} AND 
-        categoria_id = ${categoria}`
+      (nome ILIKE ${`%${query}%`} OR 
+      descricao ILIKE ${`%${query}%`} )`
+    }
+
+    return await sql<Course[]>`
+      SELECT *
+      FROM academy
+      WHERE
+        (nome ILIKE ${`%${query}%`} OR 
+        descricao ILIKE ${`%${query}%`} ) AND
+        categoria_id = ${categoria} `
   }
 
 export const fetchCategorias =
   async () => await sql<Category[]>`
-    SELECT * FROM categorias`
+SELECT * FROM categorias`

@@ -1,18 +1,24 @@
+import { fetchCategorias } from '@/lib/db'
+import Search from './components/search';
 import CoursesGrid from './components/grid'
 import CategoriesFilter from './components/categories'
-import { fetchCategorias } from '@/lib/db'
 
 export default async function Academy(props: {
   searchParams?: Promise<{
     categoria?: number;
+    query?: string;
   }>;
 }) {
   const searchParams = await props.searchParams;
   return (
     <div className='p-4'>
       <h2> Academy </h2>
+      <Search />
       <CategoriesFilter categories={await fetchCategorias()} />
-      <CoursesGrid categoria={searchParams?.categoria || 1} />
+      <CoursesGrid
+        categoria={searchParams?.categoria || 1}
+        query={searchParams?.query || ""}
+      />
     </div>
   )
 }
