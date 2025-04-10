@@ -8,13 +8,11 @@ export default async function Academy(props: {
   }>;
 }) {
   const searchParams = await props.searchParams;
-  const categoria = searchParams?.categoria || 1;
-  const cat = await fetchCategorias()
   return (
     <div className='p-4'>
       <h2> Academy </h2>
-      <CategoriesFilter categories={cat} />
-      <CoursesGrid categoria={categoria} />
+      <CategoriesFilter categories={await fetchCategorias()} />
+      <CoursesGrid categoria={searchParams?.categoria || 1} />
     </div>
   )
 }
