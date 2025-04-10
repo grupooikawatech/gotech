@@ -3,14 +3,16 @@ import Image from "next/image";
 
 export default async function CoursesGrid({
   categoria: categoria,
-  query: query
+  query: query,
+  page: page
 }: {
   categoria: number,
-  query: string
+  query: string,
+  page: number;
 }) {
-  const res = await fetchCourses(categoria, query)
+  const res = await fetchCourses(categoria, query, page)
   return (
-    <div className='grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4'>
+    <div className='max-w-5xl m-auto grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4'>
       {res.map((course) =>
         <button
           key={course.id}

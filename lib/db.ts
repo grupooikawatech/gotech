@@ -20,20 +20,46 @@ export type Category = {
   nome: string,
 }
 
+export type Count = {
+  count: number,
+}
+
+const ITEMS_PER_PAGE = 20;
+
+export const fetchCoursesPages = async (query: string, categoria: number) => {
+  let data
+
+  if (Number(categoria) === 1)
+    data = await sql<Count[]>`
+      SELECT COUNT (*)
+      FROM academy
+      WHERE 
+        nome ILIKE ${`%${query}%`} OR 
+        descricao ILIKE ${`%${query}%`}`
+  else
+    data = await sql<Count[]>`
+    SELECT COUNT (*)
+    FROM academy
+    WHERE
+      (nome ILIKE ${`%${query}%`} OR 
+      descricao ILIKE ${`%${query}%`}) AND
+      categoria_id = ${categoria}
+`
+  return Math.ceil(Number(data.at(0)!.count) / ITEMS_PER_PAGE);
+}
+
 export const fetchCourses =
-  async (categoria = 1, query = "") => {
-    if (Number(categoria) === 1 && query === "")
-      return await sql<Course[]>`
-        SELECT * FROM academy`
+  async (categoria = 1, query = "", page = 1) => {
+    const offset = (page - 1) * ITEMS_PER_PAGE;
 
     if (Number(categoria) === 1) {
-      console.log(query)
       return await sql<Course[]>`
       SELECT * 
       FROM academy
       WHERE 
-      (nome ILIKE ${`%${query}%`} OR 
-      descricao ILIKE ${`%${query}%`} )`
+        nome ILIKE ${`%${query}%`} OR 
+        descricao ILIKE ${`%${query}%`}
+      LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}`
     }
 
     return await sql<Course[]>`
@@ -42,7 +68,8 @@ export const fetchCourses =
       WHERE
         (nome ILIKE ${`%${query}%`} OR 
         descricao ILIKE ${`%${query}%`} ) AND
-        categoria_id = ${categoria} `
+        categoria_id = ${categoria}
+      LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}`
   }
 
 export const fetchCategorias =
