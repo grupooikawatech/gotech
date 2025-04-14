@@ -17,5 +17,6 @@ Esta é ma refatoração do website utilizando o framework Next.js e TailwindCSS
 
 4. **Inicializar o projeto com docker-compose:**
     - `sudo docker-compose up`
+
 5. **Acessar a aplicação em**
     - http://localhost:3000

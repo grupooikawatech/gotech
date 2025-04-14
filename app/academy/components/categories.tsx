@@ -3,7 +3,7 @@
 import { Category } from "@/lib/db";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
-export default function categoriesFilter(
+export default function CategoriesFilter(
   { categories: categories }:
     { categories: Category[] }) {
   const searchParams = useSearchParams();

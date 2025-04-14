@@ -11,6 +11,8 @@ services:
       - postgres
     environment:
       NODE_ENV: development
+    env_file:
+      - .env
   postgres:
     container_name: postgres
     image: 'postgres'
