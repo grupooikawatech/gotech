@@ -13,6 +13,7 @@ export type Course = {
   descricao: string,
   imagem: string,
   categoria_id: number,
+  link_compra: string,
 }
 
 export type Category = {
@@ -49,8 +50,14 @@ export const fetchCoursesPages = async (query: string, categoria: number) => {
 }
 
 export const fetchCourses =
-  async (categoria = 1, query = "", page = 1) => {
+  async ({ categoria = 1, query = "", page = 1, id = -1 }) => {
     const offset = (page - 1) * ITEMS_PER_PAGE;
+
+    if (id > -1)
+      return await sql<Course[]>`
+      SELECT * 
+      FROM academy
+      WHERE id = ${id}`
 
     if (Number(categoria) === 1) {
       return await sql<Course[]>`

@@ -1,5 +1,6 @@
 import { Course } from "@/lib/db";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GridItem({ course }: { course: Course }) {
   return <button
@@ -14,5 +15,9 @@ export default function GridItem({ course }: { course: Course }) {
       alt=''
     />
     <h3>{course.nome}</h3>
+    <Link
+      href={`/academy/${course.id}`}
+      className='text-blue-600'
+    >Ver mais</Link>
   </button>
 }

@@ -11,7 +11,7 @@ export default async function Academy(props: {
     page?: number;
   }>;
 }) {
-  const { categoria = 1, query = "", page = 1 } = await props.searchParams!
+  const { categoria = 1, query = "", page = 1 } = await props.searchParams || {}
   return (
     <div className='p-4'>
       <h2> Academy </h2>

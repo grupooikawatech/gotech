@@ -10,7 +10,7 @@ export default async function CoursesGrid({
   query: string,
   page: number;
 }) {
-  const res = await fetchCourses(categoria, query, page)
+  const res = await fetchCourses({ categoria, query, page })
   return (
     <div className='max-w-5xl m-auto grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4'>
       {res.map((course) =>
