@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid"
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -121,9 +122,9 @@ function PaginationArrow({
 
   const icon =
     direction === 'left' ? (
-      <button className="w-4" />
+      <ArrowLeftIcon className="w-4" />
     ) : (
-      <button className="w-4" />
+      <ArrowRightIcon className="w-4" />
     );
 
   return isDisabled ? (
