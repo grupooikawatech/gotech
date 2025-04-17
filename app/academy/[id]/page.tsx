@@ -1,5 +1,4 @@
 import { fetchCourses } from "@/lib/db";
-import Image from "next/image";
 import Link from "next/link";
 
 export default async function CoursePage({ params }:
