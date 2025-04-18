@@ -9,10 +9,13 @@ export default function Search() {
   const { replace } = useRouter();
 
   return (
-    <div className="flex items-center justify-center flex-wrap gap-4 m-4">
+    <div
+      id="searchbar"
+      className="flex items-center justify-center flex-wrap gap-4 m-4">
       <input
+        placeholder="Busque por cursos"
         defaultValue={searchParams.get('query')?.toString()}
-        className="peer block w-full rounded-full py-[9px] pl-10 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
+        className=" mt-4 block w-full rounded-full py-[9px] pl-10 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
         onChange={useDebouncedCallback((e) => {
           const query = e.target.value;
           const params = new URLSearchParams(searchParams);

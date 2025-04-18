@@ -3,6 +3,7 @@ import Search from './components/search';
 import CoursesGrid from './components/grid'
 import CategoriesFilter from './components/categories'
 import Pagination from './components/pagination';
+import AcademyHeader from './components/header';
 
 export default async function Academy(props: {
   searchParams?: Promise<{
@@ -14,7 +15,7 @@ export default async function Academy(props: {
   const { categoria = 1, query = "", page = 1 } = await props.searchParams || {}
   return (
     <div className='p-4'>
-      <h2> Academy </h2>
+      <AcademyHeader />
       <div className="max-w-4xl m-auto">
         <Search />
         <CategoriesFilter categories={await fetchCategorias()} />
