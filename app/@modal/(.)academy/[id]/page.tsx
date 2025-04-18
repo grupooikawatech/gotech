@@ -1,4 +1,4 @@
-import Modal from "./modal";
+import Modal from "../../modal";
 import CoursePage from "@/app/academy/[id]/page";
 
 export default async function CourseModal(
