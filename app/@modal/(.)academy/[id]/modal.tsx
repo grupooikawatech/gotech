@@ -11,10 +11,8 @@ export default function Modal({ children }: {
   const dialogRef = useRef<ComponentRef<'dialog'>>(null);
 
   useEffect(() => {
-    if (!dialogRef.current?.open) {
-      console.log("open modal")
+    if (!dialogRef.current?.open)
       dialogRef.current?.showModal();
-    }
   }, []);
 
   return createPortal(

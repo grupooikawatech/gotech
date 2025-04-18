@@ -5,7 +5,6 @@ export default async function CourseModal(
   { params }: {
     params: Promise<{ id: string }>
   }) {
-  console.log(await params)
   return (
     <Modal>
       <CoursePage params={params} />
