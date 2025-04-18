@@ -28,12 +28,12 @@ export default async function PatchNewsPage() {
         {"A Fênix Reborn Design e Tecnologia é especializada em criar experiências digitais transformadoras, focada em desenvolvimento web, design e soluções inovadoras. O Patch News é mais um exemplo de nossa missão de entregar qualidade e praticidade aos nossos usuários."}
       </p>
       <div className="flex justify-center gap-8">
-        <Link href="https://github.com/fenixreborntecnologia/vendacerta"
+        <Link href="https://github.com/nicolassantos22/PatchNews"
           className="mx-auto rounded-full bg-green-700 hover:bg-green-600 text-white font-bold p-4 shadow-lg dark:shadow-none"
         >
           {"Visualizar no GitHub"}
         </Link>
-        <Link href="https://fenixreborntecnologia.github.io/vendacerta/"
+        <Link href="https://nicolassantos22.github.io/PatchNews/"
           className="mx-auto rounded-full bg-green-700 hover:bg-green-600 text-white font-bold p-4 shadow-lg dark:shadow-none"
         >
           {"Visualizar o Site"}
