@@ -1,6 +1,6 @@
 // URL do script PHP que lista as categorias
-const URL_LISTAR_CATEGORIAS = "https://fenixreborn.com.br/listar_categorias.php";
-const URL_LISTAR_CATEGORIAS_STORE = "https://fenixreborn.com.br/listar_categorias_store.php";
+const URL_LISTAR_CATEGORIAS = "https://grupooikawa.tech/listar_categorias.php";
+const URL_LISTAR_CATEGORIAS_STORE = "https://grupooikawa.tech/listar_categorias_store.php";
 
 /* Apenas Mobile! */
 
@@ -133,7 +133,7 @@ async function pesquisarCursos() {
     }
 
     try {
-        const response = await fetch(`https://fenixreborn.com.br/search_academy.php?termo=${encodeURIComponent(termo)}`);
+        const response = await fetch(`https://grupooikawa.tech/search_academy.php?termo=${encodeURIComponent(termo)}`);
         const cursos = await response.json();
 
         // Limpar resultados anteriores
@@ -173,7 +173,7 @@ async function pesquisarProdutos() {
     }
 
     try {
-        const response = await fetch(`https://fenixreborn.com.br/search_store.php?termo=${encodeURIComponent(termo)}`);
+        const response = await fetch(`https://grupooikawa.tech/search_store.php?termo=${encodeURIComponent(termo)}`);
         const cursos = await response.json();
 
         // Limpar resultados anteriores
@@ -300,7 +300,7 @@ function exibirCategoriasStore(categorias) {
 async function carregarProdutos(pagina = 1, categoriaId = 1) {
     try {
         const limite = 20; // Quantidade de produtos por página
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos.php?pagina=${pagina}&limite=${limite}&categoria_id=${categoriaId}`);
+        const response = await fetch(`https://grupooikawa.tech/listar_produtos.php?pagina=${pagina}&limite=${limite}&categoria_id=${categoriaId}`);
         const { produtos, totalPaginas } = await response.json();
 
         const container = document.getElementById('produtos');
@@ -376,7 +376,7 @@ function atualizarPaginacao(paginaAtual, totalPaginas, categoriaId = 1) {
 async function mostrarDetalhes(id) {
     try {
         // Faz a requisição ao backend para obter os detalhes do produto
-        const response = await fetch(`https://fenixreborn.com.br/listar_produto.php?id=${id}`);
+        const response = await fetch(`https://grupooikawa.tech/listar_produto.php?id=${id}`);
         const produto = await response.json();
 
         // Preenche os elementos do modal com os dados do produto
@@ -397,7 +397,7 @@ async function mostrarDetalhes(id) {
 async function carregarProdutosStore(pagina = 1, categoriaId = 1) {
     try {
         const limite = 20; // Quantidade de produtos por página
-        const response = await fetch(`https://fenixreborn.com.br/listar_produtos_store.php?pagina=${pagina}&limite=${limite}&categoria_id=${categoriaId}`);
+        const response = await fetch(`https://grupooikawa.tech/listar_produtos_store.php?pagina=${pagina}&limite=${limite}&categoria_id=${categoriaId}`);
         const { produtos, totalPaginas } = await response.json();
 
         const container = document.getElementById('produtos');
@@ -474,7 +474,7 @@ function atualizarPaginacaoStore(paginaAtual, totalPaginas, categoriaId) {
 async function mostrarDetalhesStore(id) {
     try {
         // Faz a requisição ao backend para obter os detalhes do produto
-        const response = await fetch(`https://fenixreborn.com.br/listar_produto_store.php?id=${id}`);
+        const response = await fetch(`https://grupooikawa.tech/listar_produto_store.php?id=${id}`);
         const produto = await response.json();
 
         // Preenche os elementos do modal com os dados do produto
