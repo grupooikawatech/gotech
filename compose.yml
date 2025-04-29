@@ -23,3 +23,10 @@ services:
     volumes:
       - ./docker/db-data/:/var/lib/postgresql/data/
       - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+  dashboard:
+    image: illasoft/illa-builder
+    container_name: illa-builder
+    ports:
+      - "8080:2022"
+      # - "443:443"
+    restart: unless-stopped
