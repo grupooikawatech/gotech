@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model academy {
+  id            Int         @id
+  nome          String      @db.VarChar
+  imagem        String?     @db.VarChar
+  link_compra   String?     @db.VarChar
+  criado_em     DateTime?   @default(now()) @db.Timestamp(6)
+  atualizado_em DateTime?   @default(now()) @db.Timestamp(6)
+  categoria_id  Int?
+  descricao     String      @default(" ") @db.VarChar
+  categorias    categorias? @relation(fields: [categoria_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model categorias {
+  id      Int       @id
+  nome    String    @db.VarChar
+  academy academy[]
+}
+
+model categorias_store {
+  id    Int     @id
+  nome  String  @db.VarChar
+  store store[]
+}
+
+model store {
+  id               Int               @id
+  nome             String            @db.VarChar
+  descricao        String?
+  preco            Decimal?          @db.Decimal
+  imagem           String?           @db.VarChar
+  link_compra      String?           @db.VarChar
+  categoria_id     Int?
+  categorias_store categorias_store? @relation(fields: [categoria_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
