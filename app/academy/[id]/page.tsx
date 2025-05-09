@@ -1,11 +1,16 @@
-import { fetchCourses } from "@/lib/db";
+import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
 
 export default async function CoursePage({ params }:
   { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const res = await fetchCourses({ id: Number(id) })
-  const course = await res.at(0)!
+  // const res = await fetchCourses({ id: Number(id) })
+  const prisma = new PrismaClient()
+  const course = await prisma.academy.findUnique({
+    where: {
+      id: Number(id)
+    }
+  })
 
   return (
     <div className='max-w-4xl m-auto'>
