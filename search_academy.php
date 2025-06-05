@@ -2,9 +2,15 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-// Conexão com o banco de dados
-$conn = new mysqli("193.203.175.154:3306", "u196497167_admin", "OculosEscuro@132", "u196497167_fenixreborn");
-
+// Conexão com o banco de dados local SQLite
+try {
+    $conn = new PDO("sqlite:webapp.db");
+    // Configurar o modo de erro do PDO para exceções
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conexão bem-sucedida!";
+} catch (PDOException $e) {
+    echo "Erro na conexão: " . $e->getMessage();
+}
 
 if ($conn->connect_error) {
     echo json_encode(["erro" => "Erro de conexão"]);
